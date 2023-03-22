@@ -1,47 +1,24 @@
-# Main Title
-## Subtitle
+# TECH 211
 
-Starting plain text
+This is the **first** README of the training programme. I'm going to randomly _italicize_ and **bold** (and maybe *__both__*?) just for the sake of experimentation
 
-Text on a new line.
-
-*Italics*
-
-**Bold**
-
-_Bolder?_
-
-*__Both__*
-
-> "Quote"
->> - Some Intellectual
-
-list
-
-- item 1
-- item 2
-- item 3
-
-1. One.
-2. Two.
-99. Three, even though you types 99.
+This is text on a new line.
 
 
-![Image](./location)
+## We will be learning
+![](https://images.ctfassets.net/23aumh6u8s0i/1IKVNqiLhNURzZXp652sEu/4379cfba19f0e19873af6074d3017f70/csharp)
 
 [A link back to the title](#main-title)
 
-```c#
-public class Example {
-    static void Main(string[]args){
+```js
+//Hello world but to the universe instead in js
+console.log("Greetings Universe!");
 
-    }
-
-}
 ```
-- [  ] not checked in
+
+
+- [ ] I'm hoping this is an unchecked box when I commit this
 - [x] checked in
 
-Name | Street | Town
----|---|---
-Whosmith | Whostreet | Whotown
+
+
