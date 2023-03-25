@@ -1,24 +1,41 @@
-# TECH 211
 
-This is the **first** README of the training programme. I'm going to randomly _italicize_ and **bold** (and maybe *__both__*?) just for the sake of experimentation
+# WEEK 1
 
-This is text on a new line.
+Business week. Week entailed in depth look at Agile methodology and Scrum
 
 
-## We will be learning
-![](https://images.ctfassets.net/23aumh6u8s0i/1IKVNqiLhNURzZXp652sEu/4379cfba19f0e19873af6074d3017f70/csharp)
+Briefly touched over **shells**, and learnt a useful power shell script for
+detecting changes and commiting then pushing them if so 
 
-[A link back to the title](#main-title)
-
-```js
-//Hello world but to the universe instead in js
-console.log("Greetings Universe!");
+```ps
+if (git status --porcelain){
+    echo "New changes detecteed. Execute script? (Y or N)"
+    $confirm = Read-Host confirm
+        if ($confirm -eq "Y"){
+            echo "Adding and committing changes..."
+            git add -A
+            git commit -m "Committing all changes"
+            git push origin main
+            echo "Done. All changes committed and pushed to remote repository."
+        } elseif($confirm -eq "N"){
+            echo "Aborting script."
+        } else {
+            echo "Invalid. Please enter Y/r or N/n."
+            .\changeCheck.ps1
+        }
+        else {
+            echo "No new changes."
+        }
+}
 
 ```
 
+We learnt markdown although the checkboxes weren't working for me on VSCode
 
 - [ ] I'm hoping this is an unchecked box when I commit this
-- [x] checked in
+- [x] I'm hoping this is checked in
 
+
+# WEEK 2 
 
 
