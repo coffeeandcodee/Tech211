@@ -1,1 +1,0 @@
-Write a script that temporarily changes execution policy to execute a given script

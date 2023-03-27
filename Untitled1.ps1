@@ -1,3 +1,3 @@
-﻿echo Hi. What's your name?
-read-host first_name
-echo "Nice to mee
+﻿echo whats your name?
+read-host $name
+echo HEYYY $name
