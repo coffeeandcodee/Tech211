@@ -7,24 +7,6 @@ public class Program
 {
     static void Main()
     {
-        if (Method1() && Method2())
-        {
-            Console.WriteLine("If you're seeing this then both methods declared below executed");
-        }
-
-        bool Method1()
-        {
-            Console.WriteLine("This method will always execute!");
-            Random rand = new Random();
-            int oneOrTwo = rand.Next(1, 3);
-            bool result = (oneOrTwo == 2) ? true : false;
-            return result;
-        }
-        bool Method2()
-        {
-            Console.WriteLine("Might execute, it might not ¯_(ツ)_¯");
-            return true;
-        }
 
     }
 
