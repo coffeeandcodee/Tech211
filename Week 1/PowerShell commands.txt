@@ -1,0 +1,39 @@
+# back to home (Users\Ahmed)
+ cd ~
+
+# get help
+get-help ls
+
+Worth mentioning that notepad is installed in "path directory" meaning program can be found from anywhere.
+You don't need to specify file path.
+
+# get-content
+# (Pipes the content of "filename.txt" through to the measure command)
+gc filename.txt | measure -line -word -character
+
+
+
+# print to screen
+echo "hey"
+
+#Move to root
+cd /
+
+# create folder
+md <folder>
+mkdir <folder>
+
+# add content and OVERWRITE FILE
+echo "hello" > file.txt
+
+# add content and APPEND to existing content
+echo "hello" >> file.txt
+
+md subfolder
+cd subfolder
+
+# back up 2 levels
+cd ../..
+
+# list folders WITH SUBFOLDERS
+ls -R
