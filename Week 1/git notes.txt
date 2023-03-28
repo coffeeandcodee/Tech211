@@ -1,0 +1,45 @@
+Git is a distibuted version control system.
+
+Wiki question notes 
+
+
+1. git clone: This command sets up a LOCAL repository
+
+2. Staging is the marking of modified files or just files to be added
+   to the next commit snapshot. Done using:
+
+git add.
+git commit -m "Message"
+
+   Then 
+
+git push/git push origin main
+
+   To be added to remote repo (?)
+
+3. A commit is the saving of changes to the local repository. Done using
+   git commit. Done after staging 
+
+4. A git-ignore file is a file that specifies unintentionally untracked files that Git should ignore
+   when uploading local repository content to remote repository (i.e running "git push")
+
+
+OTHER notes:
+
+git status:
+used to see list of locally modified files before committing
+
+git  init: 
+PETER OFFERED ALTERNATIVE of just creating repo on GitHub then cloning it locally 
+Run this command in the folder to be controlled by Git to turn directory/repository 
+into a Git repo (repository). The get init command creates a 
+sub-folder called '.git'. This stores config information for the repo.
+It remembers all the history, the versions of all files, and all branches.
+It keeps track of where you are currently working (HEAD).
+
+.gitignore files can be created via git. These are essential for excluding certain files
+from Git control. Templates can be created via GitHub.
+
+
+Powershell questions
+
