@@ -48,7 +48,7 @@ The evolution of the .NET framework was outlined throughout discussion.
 |------          |----- |---|
 |.NET framework  |2002-2014| Platform dependent / Windows only
 |.NET Core       |2015-2019| WINDOWS SPECIFIC Cross-compatibility introduced
-|.NET            |2020-2022| Enhanced cross-compatibility 
+|.NET            |2020-present| Enhanced cross-compatibility 
  
 The latest edition of .NET, (just) .NET, has introduced a greater level of cross-compatibility. Code can now be written for all sorts of purposes including desktop and web apps, cloud, mobile apps, games and AI
 
