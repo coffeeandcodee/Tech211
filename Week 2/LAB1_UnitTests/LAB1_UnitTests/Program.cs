@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace LAB1_UnitTests;
 
@@ -33,4 +34,11 @@ public class Program
         }
         return result;
     }
+    public static string GetGrade(int Grade)
+    {
+        //return grade >= 65 ? grade >= 85 ? "You got a Distinction :O" : "You pass!" : "You fail :(";
+        return Grade >= 65 ? Grade >= 85 ? "You got a Distinction :O" : "You pass!" : "You fail :(";
+
+    }
+
 }

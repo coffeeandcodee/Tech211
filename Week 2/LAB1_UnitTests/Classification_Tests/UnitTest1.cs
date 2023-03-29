@@ -2,6 +2,11 @@ using LAB1_UnitTests;
 
 //NOTE - Ages assumed to be integer values (i.e upper age bound for those who can only watch U & PG is 11)
 
+//Arrange
+//Act
+//Assert
+
+
 namespace Classification_Tests
 {
     public class Tests
@@ -15,14 +20,14 @@ namespace Classification_Tests
         [TestCase(12, "U, PG & 12 films available.")]
         [TestCase(13, "U, PG & 12 films available.")]
         [TestCase(14, "U, PG & 12 films available.")]
-
+        
         //Test cases for 15 <= age < 18 range
         [TestCase(15, "U, PG, 12 & 15 films available.")]
         [TestCase(16, "U, PG, 12 & 15 films available.")]
         [TestCase(17, "U, PG, 12 & 15 films available.")]
 
         //Test cases for ages >= 18
-        [TestCase(18, "All films are available.")]
+        [TestCase(18,  "All films are available.")]
         [TestCase(999, "All films are available.")]     //Old man
 
 
