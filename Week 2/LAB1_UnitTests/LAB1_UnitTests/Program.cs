@@ -21,7 +21,7 @@ public class Program
         }
         else if (ageOfViewer < 15)
         {
-            result = "U, PG, & 12 films available.";
+            result = "U, PG & 12 films available.";
         }
         else if(ageOfViewer < 18)
         {
