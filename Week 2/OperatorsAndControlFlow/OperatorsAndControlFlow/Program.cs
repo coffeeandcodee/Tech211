@@ -1,4 +1,5 @@
-﻿namespace OperatorsAndControlFlow;
+﻿using Loops;
+namespace OperatorsAndControlFlow;
 
 public class Program
 {
@@ -36,7 +37,7 @@ public class Program
         int eaterz = 3;
         int portion = darkChocolate / eaterz;
         int leftOver = darkChocolate % eaterz;
-        
+
 
         //coditional expressions & logical operators
         bool isComfortable = portion > 2 && leftOver > 0 || myHalf < value;
@@ -50,7 +51,7 @@ public class Program
         if (isWearingParachute && JumpOfAirplane())
         {
             Console.WriteLine("SUCCESSFUL JUMP");
-        } 
+        }
 
         bool JumpOfAirplane()
         {
@@ -63,10 +64,10 @@ public class Program
 
         string greeting = null;
         // Throws exception because of lack of shortcutting
-        if (greeting != null & greeting.ToLower().StartsWith('a'))
+        /*if (greeting != null & greeting.ToLower().StartsWith('a'))
         {
             Console.WriteLine(greeting + " starts with 'a'");
-        }
+        }*/
         #endregion
 
         #region Control Flow
@@ -92,19 +93,42 @@ public class Program
         }
 
         //Item in foreach loop is READ ONLY. If value needs to be changed use for loop
+        List<int> nums = new List<int> { 10, 6, 22, -17, 3 };
+
+        Console.WriteLine("Highest number using a for loop: " + LoopExamples.HighestForLoop(nums));
+        Console.WriteLine("Highest number using a foreach loop: " + LoopExamples.HighestForEachLoop(nums));
+        Console.WriteLine("Highest number using a while loop: " + LoopExamples.HighestWhileLoop(nums));
+        Console.WriteLine("Highest number using a do-while loop: " + LoopExamples.HighestDoWhileLoop(nums));
         #endregion
 
+        try
+        {
+            Console.WriteLine("His grade is: " + GetGrade(-1));
+        }
+        catch (ArgumentOutOfRangeException e)
+        {
+            Console.WriteLine(e.Message);
+        }
 
     }
 
     //TO BE TESTED AS HOMEWORK
     public static string GetGrade(int grade)
     {
+        //assume request that input is between 0 and 100
+
+        //if data is invalid
+        //This is THROWING exception if inputted.
+        //Handling exception is HANDLING
+        if (grade < 0 || grade > 100)
+        {
+            throw new ArgumentOutOfRangeException("'grade' needs to be between 0 and 100");
+        }
         return grade >= 65 ? grade >= 85 ? "You got a Distinction :O" : "You pass!" : "You fail :(";
     }
-
     
-        
+
+
 
 
     private static string GetWeeksAndDays(int days)

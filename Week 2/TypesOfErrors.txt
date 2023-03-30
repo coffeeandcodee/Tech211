@@ -1,0 +1,11 @@
+Syntax errors
+not using the correct language "grammar"
+leaving out semicolons, misspelling keywords, brackets in the wrong place
+code doesn't compile
+Logic error:
+code compiles and runs but does the wrong thing
+wrong assumptions / fault requirements
+wrong conditions using in selection or loop conditions
+incorrect calculations
+Exception
+syntax is correct, code compiles, but something goes wrong at runtime.
