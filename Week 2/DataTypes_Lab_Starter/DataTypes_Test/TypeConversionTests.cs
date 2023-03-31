@@ -1,5 +1,5 @@
-﻿using NUnit.Framework;
-using DataTypes_Lib;
+﻿using DataTypes_Lib;
+using NUnit.Framework;
 using System;
 
 namespace DataTypes_Test
@@ -20,7 +20,7 @@ namespace DataTypes_Test
         public void WhenGivenAnInvalidUInt_UIntToShort_ThrowsAnException()
         {
             uint before = short.MaxValue + 1;
-            Assert.That(() => TypeConversion.UIntToShort(before), Throws.InstanceOf<OverflowException>()); 
+            Assert.That(() => TypeConversion.UIntToShort(before), Throws.InstanceOf<OverflowException>());
         }
 
         [TestCase(0f, 0L)]
@@ -41,6 +41,6 @@ namespace DataTypes_Test
             Assert.That(after, Is.InstanceOf<long>());
             Assert.That(after, Is.EqualTo(expAfter));
         }
-    } 
+    }
 
 }

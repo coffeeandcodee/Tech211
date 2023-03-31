@@ -1,5 +1,5 @@
-﻿using NUnit.Framework;
-using DataTypes_Lib;
+﻿using DataTypes_Lib;
+using NUnit.Framework;
 using System;
 
 namespace DataTypes_Test
@@ -15,6 +15,7 @@ namespace DataTypes_Test
         [Test]
         public void WhenGivenTwoVeryLargeIntegers_Add_ThrowsAnException()
         {
+
             Assert.That(() => IntegerCalc.Add(int.MaxValue, 3), Throws.TypeOf<OverflowException>());
         }
 

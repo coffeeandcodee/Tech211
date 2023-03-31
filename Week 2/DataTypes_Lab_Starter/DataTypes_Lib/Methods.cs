@@ -1,5 +1,4 @@
-﻿using System;
-/*My notes written in multi-line syntax*/
+﻿/*My notes written in multi-line syntax*/
 namespace DataTypes_Lib
 {
     public static class Methods
@@ -12,20 +11,18 @@ namespace DataTypes_Lib
             "wraps" back around and starts from minimum negative integer, then adds the remainder of
             (17! - 2,147,483,647) to the minimum integerv (I think) to return a negative value
             Amended types to double to pass tests*/
-           
-
-
             double result = 1;
-            for(double i = 1; i <= n; i++)
+            for (double i = 1; i <= n; i++)
             {
-                result *= i;   
+                result *= i;
             }
             return result;
-            
+
         }
 
         public static float Mult(float num1, float num2)
         {
+            /*floats have 32 bits in memory */
             return num1 * num2;
         }
     }
