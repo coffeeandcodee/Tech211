@@ -7,4 +7,4 @@ C# Basics and .NET
 4. A conditional breakpoint is a specified point by a developer that allows you to break when
 a define expression evaluates to true.
 5. Debug mode produces larger files with more metadata and debuggin symbols. This can aid in diagnosing issues.	
-   Release mode produces larges 
+   Release mode produces smaller, faster files 
