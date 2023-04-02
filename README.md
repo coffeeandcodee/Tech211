@@ -1,6 +1,6 @@
 
-# :grin: こんにちは :grin:
-Hi, I'm Ahmed Idris. Welcome to my Tech211 repo. :wave:
+# Welcome
+Hi, I'm Ahmed Idris. Welcome to my Tech211 repository. :wave:
 
 
 ### WEEK 1: Business Week :briefcase:
