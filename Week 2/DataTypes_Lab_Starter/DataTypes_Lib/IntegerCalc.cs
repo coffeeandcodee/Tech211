@@ -9,6 +9,10 @@ namespace DataTypes_Lib
         {
             /*If both ints are positive, but their sum is negative, there must be an OverflowException (?)
              When exceeding int.MaxValue, the result "wraps back around" from int.MinValue*/
+            checked
+            {
+               //num1 + num2
+            }
             if (num1 > 0 && num2 > 0 && num1 + num2 < 0)
             {
                 throw new OverflowException();
@@ -38,7 +42,7 @@ namespace DataTypes_Lib
 
         public static int Multiply(int num1, int num2)
         {
-
+            //CREATE TESTS 
             return num1 * num2;
         }
 

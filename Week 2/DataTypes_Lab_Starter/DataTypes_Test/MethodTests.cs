@@ -32,7 +32,7 @@ namespace DataTypes_Test
             WHY? Floats have 32 bits in memory, and floats that are not equal to the form
             (1/2^n) where in is an integer can be seen as recurring decimals
             e.g 0.2 in binary is 0.0011001100110011..., similar to how 1/3 = 0.333333...
-
+            Within from NUnit framework
             */
             Assert.That(result, Is.EqualTo(6.30000f).Within(0.0005));
         }

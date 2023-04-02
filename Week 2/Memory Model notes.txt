@@ -1,0 +1,5 @@
+chars and ints are value types
+
+Stack: First in last out structure
+
+Address: data lives on heap

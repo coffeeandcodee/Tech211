@@ -1,7 +1,18 @@
 ﻿using System.Text;
 using System;
 namespace DataTypesApps
-{
+
+
+{//type declaration. Same level as class, therefore 
+    // defined outside of Program class
+    public enum Suit
+    {
+        HEARTS, 
+        CLUBS,
+        DIAMONDS = 99,  //const 
+        SPADES
+
+    }
     //LOOK BACK ON CONVERSION TABLES in lecture 
     internal class Program
     {
@@ -106,23 +117,28 @@ namespace DataTypesApps
             //:C for currency 
             Console.WriteLine($"That would be {2/7d:C}");
 
+            int[] arr = { 1, 3, 4 };
+
             Console.WriteLine("Provide number");
             int NUM = Int32.Parse(Console.ReadLine());
             //TryParse
             int N;
             bool inputOk = Int32.TryParse(Console.ReadLine(), out N);
             Console.WriteLine($"Input was {(inputOk ? "" : "not")} OK");
-            if (inputOk)
 
 
-                #endregion
 
-            #region arrays
-                //single dimension
-                //Arrays are also objects 
-            int[] myIntArray = { 12, 13, 49, 93 };
+            #endregion
 
+            #region Arrays
+
+            //Arrays are also objects 
+            //single dimension
+            //arr is somewhere else?
+            int[] arrr = { 1, 4, 5, 6 };
             int[] arrClassic = new int[5];
+
+            
             //Multi-dimensional 
             //Sub arrays MUST same lengths
             int[,] a2DArray =
@@ -143,6 +159,9 @@ namespace DataTypesApps
             }
 
             //Jagged Arrays
+
+            //Before you can use a jagged array, its elements must be initialized. You can initialize the elements like this:
+            //1.
             int[][] myJaggedArray =
             {
                 new int[] {1, 2, 3 },
@@ -151,6 +170,7 @@ namespace DataTypesApps
 
             Console.WriteLine("Jagged: " + myJaggedArray[1][0]);
 
+            //2.
             //initalizing without defining
             int[][] myjaggedArray2 = new int[2][];
             myjaggedArray2[0] = new int[3];
@@ -167,7 +187,6 @@ namespace DataTypesApps
                     Console.Write(number);
                 }
             }
-
             #endregion
 
             #region DateTime
@@ -175,6 +194,24 @@ namespace DataTypesApps
 
             Console.WriteLine();
             Console.WriteLine(DateTime.Now);
+
+            #endregion
+
+            #region Enums
+            //Enums - enumerated types
+            //fixed collection of constants
+
+            //Suit mySuit = Suit.CLUBS;
+            //mySuit = Suit.HEARTS;
+            //mySuit = Suit.HEARTS;
+
+            //mySuit = (Suit)99;
+            //int diamonds = (int)Suit.DIAMONDS;
+            //Console.WriteLine(diamonds);
+
+            //string userInput = Console.ReadLine();
+
+            //mySuit = (Suit)Enum.Parse(typeof(Suit), userInput);
 
             #endregion
 

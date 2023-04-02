@@ -1,3 +1,4 @@
 1. CONTROL FLOW LAB -- Come back to the weddings method, other than that, everything is running smoothly
 2. EXCEPTIONS LAB 
-3. DATA TYPES LAB 
+3. More data types lab
+4. Look back over "String Builder" and memory model

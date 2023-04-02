@@ -93,16 +93,16 @@ public class Exercises
 
     public static int GetScottishMaxWeddingNumbers(int covidLevel)
     {
-        int result;
+        int result = 0;
         switch (covidLevel)
         {
             case < 1: result = 200; break;
             case < 2: result = 100; break;
             case < 4: result = 50; break;
-            case < 5: result = 200; break;
-
+            case < 5: result = 20; break;
+            default: result = 0; break;
         }
-        return 0;
+        return result;
     }
     
 

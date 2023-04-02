@@ -85,3 +85,47 @@ if (Method1() && Method2())
 ```
 Method2 is actually being called in the conditional, as in aside from the value it returns, the actual method and everything it entails will run. This is only given Method1 returns true. If Method1 returns false, then the compiler can conclude the conditional evaluates to false and there is no need to evaluate Method2, hence no shrug face.
 
+## Wednesday
+Today we went over exception handling. 
+
+``` c#
+   try
+        {
+            var text = File.ReadAllText("C://Users//Ahmed//OneDrive//Documents//Sparta Global//Tech211//Week 2//TypesOfErrors.txt");
+            Console.WriteLine(text);
+        } 
+        catch (FileNotFoundException e)
+        {
+            Console.WriteLine("File not found");
+            Console.WriteLine(e.Message);
+        }
+```
+Prime example of a try-catch sequence that can be been in the "ExceptionsApp" solution.
+
+.NET "variation" differences further detailed
+First - .NET Framework. Each windows platform used a different set of locally installed libararies (not in the .exe)
+
+Next - .NET core, created the Standard Library which is packaged into the .exe. It's "cross platform" for windows platforms (desktop, mobile, server etc)
+
+Now - .NET, everything is in the Standard library (AI, IoT, etc.) and in the .exe, and cross platform between OS's as well
+
+## Thursday
+
+Today we had a thorough investigation into data types and the potentially insidious mishaps that can arrive when data manipulation isn't fully understood.
+We've heard numerous times that C# is Statically Types, and we learnt exactly what that means. Variables MUST be declared with known type, and variable type cannot be changed
+
+```c#
+int n = 10;
+var x = n;
+//2 - type safe.Type of variable CANNOT be changed
+//n = "string"; <---- Won't compile
+
+//C# is MEMORY SAFE
+ //Has a garbage collector
+ //Types have a fixed memory size. Types cannot be changed, so we know how much memory we'll need
+ n = 1000;
+//Size of n in memory is still 64  bits
+  ```
+We also learnt that C# is memory safe, meaning programmers don't need to worry as much about memory related bugs. This differentiates C# from a language
+like C++, where memory management is far more relevant.
+
