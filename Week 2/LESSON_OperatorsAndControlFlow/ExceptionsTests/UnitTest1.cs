@@ -49,9 +49,13 @@ public class Tests
         //lambda expression. => is the lambda operator
 
         //Can have multiple Asserts. These two Asserts are independent 
+
+
+        Assert.That(() => Program.GetGrade(grade), Throws.TypeOf<ArgumentOutOfRangeException>());
+        //   .With.Message.Contain("'grade' needs to be between 0 and 100"));
         Assert.That(() => Program.GetGrade(grade), Throws.TypeOf<ArgumentOutOfRangeException>()
             .With.Message.Contain("'grade' needs to be between 0 and 100"));
-       
+
         //Assert
     }
 }

@@ -19,7 +19,7 @@ public class Program
         }
         catch (ArgumentException e)
         {
-            Console.WriteLine("File not found");
+            Console.WriteLine("Argument Exception");
             Console.WriteLine(e.Message);
         }
         catch (Exception e)

@@ -30,8 +30,10 @@ public class Methods
 
     public static int RollDice(Random rng)
     {
+
         var num1 = rng.Next(1, 7);
         var num2 = rng.Next(1, 7);
         return num1 + num2;
+
     }
 }

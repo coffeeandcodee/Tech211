@@ -27,6 +27,7 @@ namespace Methods_Tests
         [TestCase(1, 1, 1, 1)]
         [TestCase(2, 4, 8, 1.41)]
         [TestCase(3, 9, 27, 1.73)]
+
         
 
         public void PowersRoot_ReturnsCorrectValues(int input, int expSquare, int expCube, double expRoot)

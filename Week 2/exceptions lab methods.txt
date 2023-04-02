@@ -1,0 +1,92 @@
+1.   
+public static string GetMessage(int timeOfDay)
+    {
+        string message;
+        if (timeOfDay >= 5 && timeOfDay < 12)
+        {
+            message = "Good morning!";
+        }
+        else if (timeOfDay >= 12 && timeOfDay <= 18)
+        {
+            message = "Good afternoon!";
+        }
+        else
+        {
+            message = "Good evening!";
+        }
+
+        return message;
+    }
+
+-------------------------------------------
+2.
+public static string AvailableClassifications(int ageOfViewer)
+    {
+       
+        string result;
+        if (ageOfViewer < 12)
+        {
+            result = "U & PG films available.";
+        }
+        else if (ageOfViewer < 15)
+        {
+            result = "U, PG & 12 films available.";
+        }
+        else if(ageOfViewer < 18)
+        {
+            result = "U, PG, 12 & 15 films available.";
+        }
+        else
+        {
+            result = "All films are available.";
+        }
+        return result;
+    }
+
+---------------------------------------------------------------
+3.
+public static int GetScottishMaxWeddingNumbers(int covidLevel)
+    {
+        int result = 0;
+        switch (covidLevel)
+        {
+            case < 1: result = 200; break;
+            case < 2: result = 100; break;
+            case < 4: result = 50; break;
+            case < 5: result = 20; break;
+            default: result = 0; break;
+        }
+        return result;
+    }
+    
+-----------------------------------------------------------------
+4.
+public static string Grade(int mark)
+    {
+        //NOTE: come back and create nested if-statements 
+        var grade = "";
+        switch (mark)
+        {
+            case < 40: grade = "Fail"                   ; break;
+            case < 60: grade = "Pass"                   ; break;
+            case < 75: grade = "Pass with Merit"        ; break;
+            case < 101: grade = "Pass with Distinction"  ; break;
+
+        }
+        return grade;
+    }
+
+---------------------------------------------------------------------
+5.
+public static double Average(List<int> nums) 
+    {
+        #region Queryable class notes
+        /*'Queryable' Class part of the System.Linq library, defined above.
+		The class contains 'AsQueryable()' method. 
+		'AsQueryable' method converts an IEnumerable to an IQueryable*/
+        #endregion
+
+        /*Method returns 0 if list is empty*/
+        var avg = nums.Count == 0 ? 0 : Queryable.Average(nums.AsQueryable()) ;      /*Note, this expression value promoted to double*/
+        return avg;
+    }

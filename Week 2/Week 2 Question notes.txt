@@ -1,0 +1,10 @@
+C# Basics and .NET 
+1 - Compile time in C# turns converts source code CIL. Runtime converts CIL to machine code 
+2 - .NET is a family of frameworks for C#.  
+3 - First .NET framework. Started in 2002. Platform dependent initially, windows only.
+    .NET Core. Started 2015. WINDOWS SPECIFIC  Cross-compatibility introduced.
+	.NET. Started in 2020. Much enhanced cross-compatibility
+4. A conditional breakpoint is a specified point by a developer that allows you to break when
+a define expression evaluates to true.
+5. Debug mode produces larger files with more metadata and debuggin symbols. This can aid in diagnosing issues.	
+   Release mode produces larges 

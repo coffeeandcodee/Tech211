@@ -129,3 +129,14 @@ var x = n;
 We also learnt that C# is memory safe, meaning programmers don't need to worry as much about memory related bugs. This differentiates C# from a language
 like C++, where memory management is far more relevant.
 
+# Friday 
+
+Had a closer look at methods and method signatures. Learnt that methods can also return tuples. An important distinction for methods that return tuples is that the data returned must be explicitly named
+
+```c#
+
+
+//example of method that returns tuple
+```
+
+# :file_folder:[Week 2](./Week%202/)
