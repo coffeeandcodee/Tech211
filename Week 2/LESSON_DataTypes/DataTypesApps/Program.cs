@@ -19,7 +19,7 @@ namespace DataTypesApps
         static void Main()
         {
             #region Numericals
-            /*
+            
             //C# is STATICALLY TYPED, meaning 1 - variable must be declared with known type
             int n = 10;
             var x = n;
@@ -38,39 +38,39 @@ namespace DataTypesApps
             float f2 = 9;
             //without f, RHS (data literal?) initally evaluated as int. f2 is still a float at the end
 
-            //Integral types have absolute accurate. You'll never lose data
+            //Integral types have absolute accuracy. You'll never lose data
             //As opposed with floating point types(f, d, m) there's varying precision. You can lose data
             //float is mostly used in graphic libraries for high processing power due to its small range.
             //double is mostly used for calculations in programming to eliminate errors when decimal values are being rounded off
             float sum = 0;
             for (int i = 0; i < 1_000_000; i++)
             {
-                sum += 2 / 5f;      //float only holds 32 bits. Remaining bits after the 32 get chopped off
+                sum += 2 / 5f;      //float only holds 32 bits. Remaining bits after the 32 are truncated
             }                       //resulting in imprecise rounding
-            //Floating points can 
+           
             Console.WriteLine(sum);
             //Can be seen that sum is NOT 400,000
 
             //Safe Type conversions
             sum = 10; //float <-- int coversion valid, as there's no data loss
-            long l = n; // long <--- int into long
+            long l = n; // long <--- int into long, valid
             uint population = 68_000_000;
             l = population; // <---- long <--- uint
-            // n = population uint into int is not OK
+                            // n = population uint into int is not OK. unsafe conversion 
 
             //overflow and underflow
 
             //checked
             //{
-                
+
             //    byte cows = 150;
             //    cows += 150;
             //    //byte cows = 0
             //    //cows -= 150 would be underflow
 
-            //    Console.WriteLine(cows);
-            //}
+            //    Console.WriteLine("COWS: " + cows);
 
+            //}
 
             //Unsafe conversions WATCH RECORDING
             int students = 16;
@@ -96,7 +96,7 @@ namespace DataTypesApps
 
             //First digit 1 for negatives, 0 for positives 
             Console.WriteLine(Convert.ToString(bankBalanceUInt, 2));
-            */
+            
             #endregion
 
             #region Strings
@@ -168,13 +168,24 @@ namespace DataTypesApps
                 new int[] {4, 5 }
             };
 
-            Console.WriteLine("Jagged: " + myJaggedArray[1][0]);
 
+
+            Console.WriteLine("Jagged: " + myJaggedArray[1][0]);
             //2.
             //initalizing without defining
             int[][] myjaggedArray2 = new int[2][];
             myjaggedArray2[0] = new int[3];
             myjaggedArray2[1] = new int[2];
+
+
+
+            int[][] anotherJaggedArray2 = new int[3][];
+            anotherJaggedArray2[0] = new int[13];
+            anotherJaggedArray2[1] = new int[1];
+
+
+            int[][] jagged = new int[2][]
+
 
             myjaggedArray2[0][1] = 99;
             Console.WriteLine(myjaggedArray2[1][1]);
@@ -215,6 +226,13 @@ namespace DataTypesApps
 
             #endregion
 
+            var builder = new StringBuilder("hello");
+
+            Console.WriteLine("--------------------------------");
+            Console.WriteLine("--------------------------------");
+            builder.Append("looooo");
+            Console.WriteLine(builder);
+
         }
 
 
@@ -247,11 +265,11 @@ namespace DataTypesApps
         #region StringBuilder
         private static string StringBuilderExercise(string myString)
         {
-            string modded = myString.ToUpper();
-            int indexOfN = modded.IndexOf('N');
+            string modded = "hello";
+           
             var sb = new StringBuilder(modded);
 
-            sb.Replace('T', '*').Replace('L', '*').Remove(indexOfN + 1, sb.Length - 1 - indexOfN);
+            sb.Replace('T', '*').Replace('L', '*');
             return sb.ToString() ;
         }
         #endregion

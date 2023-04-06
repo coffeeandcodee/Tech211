@@ -11,30 +11,19 @@ namespace DataTypes_Lib
              When exceeding int.MaxValue, the result "wraps back around" from int.MinValue*/
             checked
             {
-               //num1 + num2
-            }
-            if (num1 > 0 && num2 > 0 && num1 + num2 < 0)
-            {
-                throw new OverflowException();
+                int sum = num1 + num2;
             }
             /*Mirrored logic from above. || has lower precedence than && so I could've added the below conditional to the 
              one above, but made seperate for readability*/
-            if (num1 < 0 && num2 < 0 && num1 + num2 > 0)
-            {
-                throw new OverflowException();
-            }
+            
             return num1 + num2;
         }
 
         public static int Subtract(int num1, int num2)
         {
-            if(num1 > num2 && num1 - num2 < 0)
+            checked
             {
-                throw new OverflowException();
-            }
-            if (num1 < num2 && num1 - num2 > 0)
-            {
-                throw new OverflowException();
+
             }
 
             return num1 - num2;

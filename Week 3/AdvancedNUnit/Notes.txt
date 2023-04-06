@@ -1,0 +1,19 @@
+
+
+Test Base is through the terminal. The test explorer is a GUI for making the test process easier. There exists
+many testing programs that can display tests via Test Explorer. The test explorer is not exclusive to
+NUnit. Many testing frameworks exit (MSTests, XUnit, etc.)
+
+"dotnet test" command cab used to run tests from terminal
+
+"global using NUnit.Framework;" file:
+file simply adds "global using NUnit.Framework" line to all other files
+
+Classic & Constraint models:
+
+Originally used very limited Classic model. We now use COnstraint model.
+
+Assert.That method used now Constraint model. Constraint model is much 
+more flexible
+
+

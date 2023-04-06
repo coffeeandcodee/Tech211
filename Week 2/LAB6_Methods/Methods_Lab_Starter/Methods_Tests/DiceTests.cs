@@ -6,18 +6,21 @@ namespace Methods_Tests
 {
     public class DiceTests
     {
-        [TestCase(1, 3)]
-        [TestCase(2, 8)]
-        [TestCase(3, 7)]
+        [Test]
 
-        public void RollDice_ReturnsCorrectValue(int seed, int expectedSum)
+        public void RollDice_ReturnsCorrectValue()
         {
+            //NO CONTROL FLOW IN TESTS
+            //In this case, we test the method by setting up sequence 
+            //of steps similar to method
+            Random rand = new Random(1);
+            int roll1 = rand.Next(1, 7);
+            int roll2 = rand.Next(1, 7);
+            int expected = roll1 + roll2;
 
-            Random rand = new Random(seed);
-            //int roll1 = rand.Next(1, 7);
-            //int roll2 = rand.Next(1, 7);
-            //int expectedSum = roll1 + roll2;
-            Assert.That(Methods.RollDice(rand), Is.EqualTo(expectedSum));
+            var result = Methods.RollDice(new Random());
+
+            Assert.That(Methods.RollDice(rand), Is.EqualTo(result));
 
         }
 
@@ -30,8 +33,8 @@ namespace Methods_Tests
 
 
             Assert.That(Methods.RollDice(rand), Is.GreaterThanOrEqualTo(1));
-            Assert.That(Methods.RollDice(rand), Is.LessThanOrEqualTo(12)); 
-
+            Assert.That(Methods.RollDice(rand), Is.LessThanOrEqualTo(12));
+            Assert.That(Methods.RollDice(rand), Is.InRange(1, 12));
          
         }
     }

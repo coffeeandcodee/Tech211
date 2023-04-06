@@ -6,7 +6,8 @@
 // OBJECT TYPES: Random, Objects, etc
 // OBJECT TYPES are stored on the HEAP
 
-//STRING: 
+//STRING: operate slightly differently from object types?
+//
 
 
 namespace MemoryModelLESSON
@@ -35,7 +36,8 @@ namespace MemoryModelLESSON
                 s = "CHANGED";
             }
             
-
+            //Garbage collector gets rid of dereferenced data on the heap
+            //Garbage collector "repacks" the heap after eleme
 
 
 

@@ -1,4 +1,6 @@
-# 1
+# WEEK 1
+
+
 
 Business week. Week entailed in depth look at Agile methodology and Scrum
 

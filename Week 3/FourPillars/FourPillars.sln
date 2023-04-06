@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourPillarsApp", "FourPillarsApp\FourPillarsApp.csproj", "{DFC9BA40-EE24-481E-9FDE-EBB37A89D308}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourPillarsTest", "FourPillarsTest\FourPillarsTest.csproj", "{DEAC33B4-F585-4B5C-8AB7-6EE7E3BAC367}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DFC9BA40-EE24-481E-9FDE-EBB37A89D308}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFC9BA40-EE24-481E-9FDE-EBB37A89D308}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFC9BA40-EE24-481E-9FDE-EBB37A89D308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEAC33B4-F585-4B5C-8AB7-6EE7E3BAC367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEAC33B4-F585-4B5C-8AB7-6EE7E3BAC367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEAC33B4-F585-4B5C-8AB7-6EE7E3BAC367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEAC33B4-F585-4B5C-8AB7-6EE7E3BAC367}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
