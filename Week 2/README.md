@@ -1,7 +1,6 @@
 
 # Quick Lab navigation
-#### :scroll:[LAB1: Unit Tests](./LAB1_UnitTests/LAB1_UnitTests/Program.cs )
-#### :scroll:[LAB2: Operations and control flow](./LAB2_OperatorsAndControlFlow/)
+#### :scroll:[LAB1: Unit Tests](./LAB1_UnitTests/LAB1_UnitTests/Program.cs ) :scroll:[LAB2: Operations and control flow](./Week 2/LAB2_OperatorsAndControlFlow/Op_CtrlFlow_Tests/Exercises_Tests.cs)
 
 # MONDAY 27/03
 ## :exclamation: The coding has begun :exclamation:
