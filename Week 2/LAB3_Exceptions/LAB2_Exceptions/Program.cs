@@ -35,8 +35,6 @@ public class Program
             throw new ArgumentNullException("Emptyyyyyyyyyy list");
         }
 
-
-
         /*Method returns 0 if list is empty*/
         // var avg = nums.Count == 0 ? 0 : Queryable.Average(nums.AsQueryable());      /*Note, this expression value promoted to double*/
         var avg = nums.Count == 0 ? 0 : Queryable.Average(nums.AsQueryable());

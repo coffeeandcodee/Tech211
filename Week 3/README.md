@@ -70,3 +70,19 @@ int is actually an example of a struct.
 Inheritance: In C# you can only inherit from ONE class. There is no multiple inheritance
 
 All classes inherit from the OBJECT CLASS. All objects inherit methods such as Equals, GetType ToString, GetHashCode, etc. Can bee seen in documentation.
+
+
+
+## Thursday 06/04
+
+Abstract classes are classes that are inherited from. They are never instantiated. Abstract methods have no codeblock.
+```c#
+ public abstract string Speak();
+//Notice no code block
+```
+The Object class is the superclass of all classes. It comes with its own method. Console.WriteLine({object}) would return the
+Object classes ToString() method. Important to overwrite this in class methods if you wish to return a specific message related to the object
+
+Polymorphism in OOP is when objects can take many forms. An example of this is a Dog object being identified as say a Canine object (if a canine class is defined) as well as an Animal object, with the Animal class being a superclass of the Canine class.
+
+You cant have an object of an interface. Interfaces can have properties. Interfaces CANNOT have fields or private methods.

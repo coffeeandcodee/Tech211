@@ -1,5 +1,5 @@
 ﻿namespace FourPillarsApp;
-
+//Example of a struct
 public struct Point3D
 {
     public int x, y, z;

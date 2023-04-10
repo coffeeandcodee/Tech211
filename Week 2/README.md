@@ -1,3 +1,8 @@
+
+# Quick Lab navigation
+#### :scroll:[LAB1: Unit Tests](./LAB1_UnitTests/)
+#### :scroll:[LAB2: Operations and control flow](./LAB2_OperatorsAndControlFlow/)
+
 # MONDAY 27/03
 ## :exclamation: The coding has begun :exclamation:
 

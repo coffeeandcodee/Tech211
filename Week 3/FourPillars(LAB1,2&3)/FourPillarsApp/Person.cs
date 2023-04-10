@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿namespace FourPillarsApp;
 
-namespace FourPillarsApp;
-
-public class Person
+public class Person : IMoveable
 {   //Fields are members of the class
     //Fields have a default modifier of private
 
@@ -18,7 +13,7 @@ public class Person
     //properties are efficient ways of creating getters and setters
     //for class data, as opposed to getters and setters in Java. Backing field made in the background, although 
     //can be made manually. Below is an example.
-    
+
     private int _age;
     //Additional logic outside of simply getting and setting can be added.
     //Long example below
@@ -27,16 +22,16 @@ public class Person
         get
         {
             return _age;
-            
+
         }
         set
         {
-            if(_age < 0)
+            if (value < 0)
             {
-                //throw new InvalidDataException();
+                throw new InvalidDataException();
             }
-           else
-            _age = value;
+            else
+                _age = value;
         }
     }
 
@@ -74,4 +69,14 @@ public class Person
         return "";
     }
 
+    //Override keyword cant be used when inheriting from interfacesa
+    public string Move()
+    {
+        return "Walking along";
+    }
+
+    public string Move(int times)
+    {
+        throw new NotImplementedException();
+    }
 }

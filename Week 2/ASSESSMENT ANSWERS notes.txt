@@ -1,4 +1,0 @@
-Exceptions thrown at runtime
-
-string x = "45.0"
-
