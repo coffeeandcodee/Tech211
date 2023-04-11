@@ -1,7 +1,7 @@
 # WEEK 3
 
 ## Lab Nav
-#### :scroll:[LAB1, 2 & 3: Pillars of OOP](./FourPillars(LAB1%2C2%263)/FourPillarsApp) :scoll:[LAB4: Collections](./LAB4_Collections/Collections_Lab/)
+#### :scroll:[LAB1, 2 & 3: Pillars of OOP](./FourPillars(LAB1%2C2%263)/FourPillarsApp) :scroll:[LAB4: Collections](./LAB4_Collections/Collections_Lab/)
 
 ## Monday 03/04
 
