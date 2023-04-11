@@ -17,6 +17,6 @@ public class Camera : IShootable
 
     public override string ToString()
     {
-        return $"Camera's ToString() method called";
+        return $"{_brand}";
     }
 }

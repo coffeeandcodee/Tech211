@@ -29,7 +29,7 @@ public class LaserGun : Weapon
 
     public override string ToString()
     {
-        return $"This is a LaserGun";
+        return $"Laser Gun";
     }
 
    
@@ -46,7 +46,7 @@ public class WaterPistol : Weapon
 
     public override string ToString()
     {
-        return $"This is a Water Pistol";
+        return $"Water Pistol";
     }
 }
 

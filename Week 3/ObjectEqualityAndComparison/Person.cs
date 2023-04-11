@@ -10,7 +10,7 @@ public class Person : IEquatable<Person?>, IComparable<Person>
 
     public int Age { get; set; }
 
-    public Person(string firstName, string lastName, int age)
+    public Person(string firstName, string lastName, int age = 0)
     {
         Age = age;
         _firstName = firstName;

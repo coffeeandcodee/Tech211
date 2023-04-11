@@ -1,5 +1,8 @@
 # WEEK 3
 
+## Lab Nav
+#### :scroll:[LAB1, 2 & 3: Pillars of OOP](./FourPillars(LAB1%2C2%263)/FourPillarsApp) :scoll:[LAB4: Collections](./LAB4_Collections/Collections_Lab/)
+
 ## Monday 03/04
 
 Learnt that the "test base" is through the terminal, and that the test explorer is simply a GUI independent of NUnit. "dotnet test" can be run from the terminal to execute tests, however it may be tougher to interpret test results via the terminal.
@@ -62,8 +65,12 @@ OOP is the integration of data and functionality that act on data in the same sc
 
 Both structs and classes are data structures that exhibit abstraction and encapsulation.
 
+Structs are quite similar to Classes. However, two key differences.
 Structs are VALUE TYPES. They are passed BY VALUE (i.e are copied) and live on stack
 Structs CANNOT INHERIT. Cannot be inherited from and can't inherit anything.
+
+The "new" keyword can be used to instantiate a struct, however being a value type, it isn't necessary.
+
 
 int is actually an example of a struct.
 
@@ -85,4 +92,5 @@ Object classes ToString() method. Important to overwrite this in class methods i
 
 Polymorphism in OOP is when objects can take many forms. An example of this is a Dog object being identified as say a Canine object (if a canine class is defined) as well as an Animal object, with the Animal class being a superclass of the Canine class.
 
-You cant have an object of an interface. Interfaces can have properties. Interfaces CANNOT have fields or private methods.
+You cannot have an object of an interface. Interfaces can have properties. Interfaces CANNOT have fields or private methods.
+An object can inherit multiple interfaces but not multiple classes.

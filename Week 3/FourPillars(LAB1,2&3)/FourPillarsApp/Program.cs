@@ -146,7 +146,7 @@ public class Program
         var water2 = new WaterPistol("brand of water2");
 
         var cam1 = new Camera("Cannon");
-        var cam2 = new Camera("Kodak BLACk");
+        var cam2 = new Camera("Kodak Black");
 
         var hunter1 = new Hunter("Ult", "Defa", cam1);
         var hunter2 = new Hunter("Ulto", "Defato", cam2);

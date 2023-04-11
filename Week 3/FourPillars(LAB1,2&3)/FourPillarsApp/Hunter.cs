@@ -15,7 +15,7 @@ public class Hunter : Person, IShootable
 
     public string Shoot()
     {   //GetFullName() is public. Available within hunter.
-        return $"{GetFullName()} took photo with ";
+        return $"{GetFullName()} took photo with {Shooter}";
     }
 
 
