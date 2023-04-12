@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Collections_Lib
 {
@@ -26,7 +27,15 @@ namespace Collections_Lib
         /* uses a Stack to create and return array of ints in reverse order to the one supplied */
         public static int[] Reverse(int[] original)
         {
-            throw new NotImplementedException();
+            int[] result = new int[original.Length];
+            for (int i = original.Length - 1; i >= 0; i--)
+            {
+                result[original.Length - i - 1] = original[i];
+            }
+
+
+
+            return result;
         }
         // using a Dictionary, counts and returns (as a string) the occurence of the digits 0-9 in the given string
         public static string CountDigits(string input)
@@ -38,7 +47,8 @@ namespace Collections_Lib
             {
                 //char - '0' converts characters (even letters) into ints
                 int possibleInt = c - '0';
-                if (possibleInt.GetType() == typeof(int) && possibleInt < 10)
+                if (possibleInt < 0) continue;
+                if (possibleInt < 10)
                 {
                     if (!dict.ContainsKey(possibleInt)) dict[possibleInt] = 1;
                     else dict[possibleInt]++;

@@ -71,7 +71,6 @@ Structs CANNOT INHERIT. Cannot be inherited from and can't inherit anything.
 
 The "new" keyword can be used to instantiate a struct, however being a value type, it isn't necessary.
 
-
 int is actually an example of a struct.
 
 Inheritance: In C# you can only inherit from ONE class. There is no multiple inheritance
@@ -88,9 +87,70 @@ Abstract classes are classes that are inherited from. They are never instantiate
 //Notice no code block
 ```
 The Object class is the superclass of all classes. It comes with its own method. Console.WriteLine({object}) would return the
-Object classes ToString() method. Important to overwrite this in class methods if you wish to return a specific message related to the object
+Object classes ToString() method. Important to overwrite this in class methods if you wish to return a specific message related to the object.
 
 Polymorphism in OOP is when objects can take many forms. An example of this is a Dog object being identified as say a Canine object (if a canine class is defined) as well as an Animal object, with the Animal class being a superclass of the Canine class.
 
 You cannot have an object of an interface. Interfaces can have properties. Interfaces CANNOT have fields or private methods.
 An object can inherit multiple interfaces but not multiple classes.
+
+
+## Tuesday 11/06
+
+
+SOLID Principles
+
+S: Solid Responsibility Principle
+O: Open Closed Principle
+L: Liskov Substitution Principle
+I: Interface Segregation Principle
+D: Dependency Inversion Principle
+
+S:
+A software module (typically class) should represent just on thing, have 
+one responsibility.
+
+Class members (fields, properties, and methods) should be cohesive.
+
+Class should have only one reason to change. e.g social security number 
+made relevant. SSN now added to Person class
+
+Example of this is diving of hunter and camera in seperate classes in 
+the polymorphic shootout lab.
+
+Open/Closed:
+Open for extension, closed for modification
+Entities (methods and classes) should be open for extension but closed 
+for modification. 
+
+The weapon class is abstract and once defined should not be changed
+
+public class AlienInvasionException: Exception { }
+
+Liskov Substitution:
+Interfaces should be implemented consistently throughout program.
+
+Recall Hare class from lecture recording
+
+```c#
+public virtual string Move(){
+    position += _speed;
+    return "Moving along";
+}
+
+public virtual string Move(int times){
+    return $"I'm not moving, I need a rest";
+}
+
+```
+
+Interface Segration Principles:
+
+Many small, specific interfaces are better than one large, general 
+purpose one.
+
+Having smaller interfaces makes it easier to obey Liskov.
+
+Dependency Inversion: 
+
+
