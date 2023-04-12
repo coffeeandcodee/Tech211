@@ -13,4 +13,10 @@ Covered the fundamentals and done plenty of lesssons and labs to familiarise our
 
 ### WEEK 3: C# OOP :gem:
 #### :file_folder: [Week 3](/Week%203/)
-Learnt the four pillars of Object Oriented Programming in C# and their implications. All Lab tasks were completed within the same solution. 
+Learnt the four pillars of Object Oriented Programming in C# and their implications. Also looked over collections (Lists, dictionaries, queues, etc)
+
+
+### WEEK 4: :mag:
+#### :file_folder: [Week 4](/Week%204/)
+
+Algorithmic Complexity & Big O, Recursion, Design Patterns, SQL

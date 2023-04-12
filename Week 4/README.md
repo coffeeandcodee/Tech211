@@ -1,6 +1,6 @@
 ## Wednesday 12/04
 
-Covered Big O notation.
+Covered Big O notation. Big O notation is a way of describing the WORST CASE run time of an algorithm. For example, a simple array traversal has a worst case runtime of O(n), n being the size of the array.
 
 
 

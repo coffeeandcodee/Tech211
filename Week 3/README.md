@@ -77,8 +77,6 @@ Inheritance: In C# you can only inherit from ONE class. There is no multiple inh
 
 All classes inherit from the OBJECT CLASS. All objects inherit methods such as Equals, GetType ToString, GetHashCode, etc. Can bee seen in documentation.
 
-
-
 ## Thursday 06/04
 
 Abstract classes are classes that are inherited from. They are never instantiated. Abstract methods have no codeblock.
@@ -96,7 +94,6 @@ An object can inherit multiple interfaces but not multiple classes.
 
 
 ## Tuesday 11/06
-
 
 SOLID Principles
 
