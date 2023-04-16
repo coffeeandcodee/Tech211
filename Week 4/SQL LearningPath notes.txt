@@ -1,0 +1,35 @@
+1. 
+SELECT statements are uesd to query the database and retrieve any data that matches specified critieria
+e.g
+SELECT column 
+FROM table;
+
+Majority of SQL engines are case-insensitive. A common practice is that keywords (SELECT, FROM) are typed in upper case. The names of things such as columns or tables in lower case.
+
+SQL doesn't care about whitespace. The above query could've been written as 
+
+SELECT column FROM table;
+Readability convention suggests starting on a new line however, as done previously.
+
+2.
+SQL queries (Select Statements) must be written  with the various clauses in a set order. This is known as the logical sequence, or syntax sequence.
+
+SELECT
+DISTINCT
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+
+The Syntax Sequence/Logical Sequence IS NOT the order in which each clause is actually processed by SQL.
+This ordering is the Processing Sequence
+
+FROM 
+WHERE 
+GROUP BY
+HAVING
+SELECT
+DISTINCT
+ORDER BY
+

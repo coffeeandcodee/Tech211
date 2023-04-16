@@ -1,0 +1,46 @@
+Null in SQL represents a missing or unknown value.
+Null is NOT a value. 
+Null is not 0, nor is it an empty string.
+NOTHING EQUALS NULL.
+Not even null equals Null. It can be true however to say that a missing 
+value is Null, and that a known value is not Null.
+e.g 120 != Null
+Null can be thought of as the attribute of being missing or absent. 
+
+NORMALISATION
+
+Normalisation is the process of seperating data out into seperate tables
+
+Pros: 
+- Reduces data redundancy via eliminating repeated information.
+- Increases ease of database maintenance. One source of truth for each entry, easier inserts. 
+  Can insert data about single entity
+
+Cons: 
+- Increases depth via more tables. This increases difficulty of querying as multiple joins of tables is required.
+ This increases the effort for the analyst or Dev. Writer of the query needs to do more work, but also server 
+ needs to do more processing.
+
+If speed is prioritised, an unnormalised database might be more suitable.
+
+Normal Forms are properties that describe the level of normalisation of a database
+
+First Normal Form (1NF) requires:
+- Data must be atomic
+- No repeated groups
+- Each row must be unique
+
+On top of 1NF, Second Normal Form (2NF) requires:
+- All non-key attributes must functionally depend upon the full primary key.
+
+On top of 2NF, Third Normal Form requires:
+
+
+
+
+
+
+
+
+
+
