@@ -8,8 +8,8 @@ public class Customer
     public string ContactTitle { get; set; }
     public string City { get; set; }
     //Strings can't be nullable by definition
-    //NULL regions exist in DB, so specify 
-    //             string?
+    //NULL regions exist in DB, so specify using
+    //             string? syntax
     public string? Region { get; set; }
 
     public string GetFullName()
