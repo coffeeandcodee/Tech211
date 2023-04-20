@@ -53,7 +53,7 @@ public class Program
 
                 while (sqlReader.Read())
                 {
-                    //Trainee trainee = new Trainee();
+                    var trainee = new Trainee();
                     //trainee.TraineeID = sqlReader["TraineeID"];
                   
                 }
@@ -77,18 +77,19 @@ public class Program
 
     //Delete method
 
-    public void Delete(string detail,)
+    public void DeleteTrainee()
     {
         using (var connection = new SqlConnection(connectionString))
         {
-            var deleteQuery = ""
+            var deleteQuery = $"DELETE FROM TRAINEES WHERE FirstName = 'Crash'";
+
+            using(var deleteCommand = new SqlCommand(deleteQuery, connection))
+            {
+                deleteCommand.ExecuteNonQuery();
+            }
 
 
         }
-        
-      
-        
-    
 
     }
 
