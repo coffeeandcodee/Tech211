@@ -22,4 +22,6 @@ public class Tests
     {
         Assert.That(test.AddToDatabase(), Is.EqualTo("'1', 'Default', '20'"));
     }
+
+    [TearDown]
 }

@@ -1,22 +1,22 @@
 ﻿using System.Data.SqlClient;
 using System.Data;
+using System.Reflection;
 
 namespace AcademySQLClient;
 public class Program
 {
-    static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Academy;Integrated Security=True;Connect Timeout=30;Encrypt=False;
+    public static string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Academy;Integrated Security=True;Connect Timeout=30;Encrypt=False;
         TrustServerCertificate=False;ApplicationIntent=ReadWrite;
         MultiSubnetFailover=False";
 
     static void Main(string[] args)
     {
-        AddTrainee(6, "Ferg", 29);
-
+        CreateTrainee(6, "Ferg", 29);
 
     }
 
     //Create method
-    public static void AddTrainee(int id, string firstName, int age)
+    public static void CreateTrainee(int id, string firstName, int age)
     {
         using (var connection = new SqlConnection(connectionString))
         {
@@ -36,12 +36,60 @@ public class Program
 
 
     //Read method
-    //Read a certain amount of entries from top/bottom
+    public List<Trainee> ReadTrainee(int NumberOfEntries)
+    {
+        //connection is an SqlConnection object
+        using(var connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            var Trainees = new List<Trainee>();
+
+            var query = "SELECT * FROM TRAINEES";
+
+            //Command is an SqlCommand object
+            using(var command = new SqlCommand(query, connection))
+            {
+                var sqlReader = command.ExecuteReader();
+
+                while (sqlReader.Read())
+                {
+                    //Trainee trainee = new Trainee();
+                    //trainee.TraineeID = sqlReader["TraineeID"];
+                  
+                }
+
+                return Trainees;
+
+            }
+            
+        }
+
+    }
+
+
+   
 
     //Update method
+    public void Update()
+    {
 
+    }
 
     //Delete method
+
+    public void Delete(string detail,)
+    {
+        using (var connection = new SqlConnection(connectionString))
+        {
+            var deleteQuery = ""
+
+
+        }
+        
+      
+        
     
+
+    }
 
 }
