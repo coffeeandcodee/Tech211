@@ -1,0 +1,1 @@
+git merge means merge from specified branch to branch of current operation

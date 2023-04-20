@@ -1,0 +1,24 @@
+Operating system manages task allocation resources. Software that sits between the hardware
+and other pieces of software.
+
+The OS consists of:
+	- Bootloader: Turns computer on (?)
+	- Kernel	: Does the allocating."OS of the OS"
+	- Daemons	: 
+	- Networking
+	- Shell	: The way of operating with OS. Operates on outside, hence "Shell"
+	- GUI		: Graphical user interface. GUI operates with shell
+	- Applications : 
+
+GUI allows us to interact with the Operating System (OS).
+
+The Command Line Interface (CLI) allows users to type in commands
+
+Most Terminals use CLI
+
+Applications talk to shell, which talks to OS.
+
+Shell is the outermost part of an OS and a program that interacts with user commands. OS services accessed using shell.
+
+PS C:\Users\Ahmed> 
+This is the current directory. Directory can be seen to be a folder

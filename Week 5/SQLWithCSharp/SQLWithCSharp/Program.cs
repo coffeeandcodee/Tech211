@@ -57,7 +57,6 @@ public class Program
                 Region = "WM",
                 CustomerID = "SPARP"
             };
-
             //?? is the null coalescing operator. If something is null, return this instead
             var createQuery = $"INSERT INTO CUSTOMERS(CustomerID, ContactName, CompanyName, ContactTitle, City, Region) VALUES ('{newCustomer.CustomerID}', '{newCustomer.ContactName}', '{newCustomer.CompanyName}', '{newCustomer.ContactTitle}', '{newCustomer.City}', '{newCustomer.Region})'";
 

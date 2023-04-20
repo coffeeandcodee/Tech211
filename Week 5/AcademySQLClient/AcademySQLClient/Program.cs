@@ -46,15 +46,16 @@ public class Program
 
             var query = "SELECT * FROM TRAINEES";
 
-            //Command is an SqlCommand object
+            //command is an SqlCommand object
             using(var command = new SqlCommand(query, connection))
             {
                 var sqlReader = command.ExecuteReader();
 
                 while (sqlReader.Read())
                 {
+                    int id = Int32.Parse(sqlReader["TraineeID"].ToString());
                     var trainee = new Trainee();
-                    //trainee.TraineeID = sqlReader["TraineeID"];
+                    trainee.TraineeID = id;
                   
                 }
 
@@ -92,5 +93,8 @@ public class Program
         }
 
     }
+
+
+
 
 }
