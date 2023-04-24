@@ -22,6 +22,6 @@ Learnt the four pillars of Object Oriented Programming in C# and their implicati
 Algorithmic Complexity & Big O, Recursion, Design Patterns, SQL
 
 ### WEEK 5: Database Querying :grey_question:
-#### [Week 5](/Week%205/)
+#### :file_folder: [Week 5](/Week%205/)
 
 Database querying through C# code via SQLClient and Entity framework. LINQ Query syntax and method syntax.
