@@ -30,8 +30,9 @@ The above code snippet makes a connection to the Northwind database and reads an
 ```
 
 ## Thursday 20/04
-Entity Framework lesson. Much easier than using SQLClient.
-
+Entity Framework lesson. EF is an ORM (Object relational mapper)The entity framework produces classes that represent tables and a class that represents the database. 
+Building a model from database is scaffolding. Building a database from a model is migration.
+Much easier than using SQLClient.
 LINQ (language integrated query)is the name for a set of technologies based on the integration of query capabilities directly into the C# language. LINQ queries have a special syntax.
 
 ```c#
@@ -53,4 +54,33 @@ IEnumerable<IGrouping<char, Student>> studentQuery 2 =
 ```
 Above groups students using first letter of their last name as a key.
 
+Some query operations can only be expressed using method syntax. Below is an example from the walkthrough. Following code calculates total score for each student in source sequence, then calls Average() on the results of the query to calculate the average score of the class
 
+```c#
+var AverageScoreQuery =
+    from student in students
+    let totalScore = ScoreSum(student.Scores)   //ScoreSum defined elsewhere
+    select totalScore
+
+double average Score = AverageScoreQuery
+
+
+```
+## Friday 21/04
+Lambda expressions
+Higher order functions take other functions as parameters.
+
+
+Method syntax example
+
+```c#
+   var query1 =
+             from c in db.Customers
+            where c.City == "London"
+            orderby c.ContactName
+            select c;
+
+            var queryMethodSyntax = db.Customers
+                .Where( c => c.City == "London").OrderBy(c => c.ContactName);   //.Select(c => c) is implied
+
+```

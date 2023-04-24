@@ -8,8 +8,6 @@ Covered Big O notation. Big O notation is a way of describing the WORST CASE run
 Design Patterns describe solutions to commonly encountered problems. Patterns capture good design principles and communicate them to others, and are based on architectural patterns. Design Patterns give us a common language for talking about problems and their solution.
 
 
-
-
 ## Wednesday 19/04 (technically week 4?)
 ### This section is in both week 4 and 5
 
