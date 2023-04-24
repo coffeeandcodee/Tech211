@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using System.Diagnostics.Metrics;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
@@ -73,12 +74,22 @@ public class Program
 
             #region 1.4 REVISIT
             //1.4
-            /*    SELECT c.CategoryName, COUNT(*) AS "Number of Products"
+            /*   RAW SQL 
+                
+                   SELECT c.CategoryName, COUNT(*) AS "Number of Products"
                     From Products p
                     JOIN Categories c ON p.CategoryID = c.CategoryID
                     GROUP BY(c.CategoryName)
-                    ORDER BY COUNT(*) desc*/
+                    ORDER BY COUNT(*) desc
+            */
+
             //query syntax
+            //check recording 09, around 10 minutes in
+           
+            // var query4 = 
+             //   from c in db.Categories
+               // join p in db.Products on c.CategoryId equals p.CategoryId
+               
 
             //method syntax. Check recording
 
@@ -124,17 +135,42 @@ public class Program
             #endregion
 
             #region 1.6
+            //check recording 09 at ~18 minutes in
+
+
+
+
+
+            #region 1.8
+
+            var orderWithHighestDiscount = db.Orders.Include(o => o.OrderDetails).Select(o =>
+            {
+
+            });
+            
+
+            var orderWithHighestDiscount2 = db.Orders.Include(o => o.OrderDetails).Select(o => new
+
+            {
+                o.OrderId,
+                TotalDiscount = o.OrderDetails.Sum(od => od.UnitPrice * od.Quantity * (decimal)od.Discount)
+
+            }).OrderByDescending(owhd => owhd.TotalDiscount).First();
+
+
+
 
             #endregion
 
 
 
+
             #region 3.1
 
-           // var reportsToQuery
+            // var reportsToQuery
 
 
-            
+
             var reportsToMethod = db.Employees.Join(db.Employees, e1 => e1.ReportsTo, e2 => e2.EmployeeId, (employee, reportsTo) => new
             {
                 EmployeeName = $"{employee.FirstName} {employee.LastName}",
@@ -149,12 +185,7 @@ public class Program
 
             #endregion  3.1
 
-
-
-
-
-
-
+            //var suppliersWithSalesOver10000 = 
 
 
         }

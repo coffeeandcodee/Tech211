@@ -84,3 +84,21 @@ Method syntax example
                 .Where( c => c.City == "London").OrderBy(c => c.ContactName);   //.Select(c => c) is implied
 
 ```
+
+## Monday 24/04
+
+Differentiating between model-first and database-first processes. 
+The model-first, where models (classes, objects, etc...) are then converted into databases is known as **migration**. The contrary is **scaffolding**, which has has been what we have been doing thus far.
+
+It is necessary sometimes to manually update migration files.
+
+Initial migration command for PM Console
+
+```
+Add-Migration InitialMigration
+```
+
+For updating
+```
+Update-Database
+```

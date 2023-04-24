@@ -1,0 +1,9 @@
+1. EF is much easier to use than SQL client. SQL is very error prone due to use of raw strings.
+
+
+2. The connection string is a string that can be found in the properties of a databse used to connect to the 
+database. The connection string is used in code to make queries
+
+3. Scaffolding is the conversion of data base entities into classes
+
+EF is eager loadedeager loading is loading data prior use. Lazy loading 
