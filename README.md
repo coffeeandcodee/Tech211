@@ -16,11 +16,12 @@ Covered the fundamentals and done plenty of lesssons and labs to familiarise our
 Learnt the four pillars of Object Oriented Programming in C# and their implications. Also looked over collections (Lists, dictionaries, queues, etc)
 
 
-### WEEK 4: :mag:
+### WEEK 4: Comlexity & Design Patterns :mag:
 #### :file_folder: [Week 4](/Week%204/)
 
 Algorithmic Complexity & Big O, Recursion, Design Patterns, SQL
 
-### WEEK 5 :chart_with_upwards_trend: [Week 5](/Week%205/)
+### WEEK 5: Database Querying :grey_question:
+#### [Week 5](/Week%205/)
 
 Database querying through C# code via SQLClient and Entity framework. LINQ Query syntax and method syntax.
