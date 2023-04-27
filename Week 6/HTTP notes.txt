@@ -1,3 +1,33 @@
 Imagine user types in url and presses enter. The web browser creates an HTTP request. The browser then uses network to send it to the server. The server to be contacted is specified in the URL. The server creates a HTTP reponse and uses network to send it back to the browser. The browser receives this http response and interprets the content within HTTP response as a graphical page to be displayed to user (rendering).
 
-In a http request, we have the http method (e.g GET), then the version number of http (typicallt 1.1), then headers, then a blank line. The server returns a http response 
+A curl is a command-line http client
+
+Cookies are used for storing information on the browser then sending to server
+
+In a http request, we have the http method (e.g GET), then the version number of http (typicallt 1.1), then headers, then a blank line. The server returns a http response.
+
+TLS is transport layer security. It is the current standard for implementing secure internet connections.
+
+IMPORTANT HTTP METHODS
+-GET
+-POST
+-PUT
+-DELETE
+-PATCH
+
+STATUS CODES:
+
+1xx - Informational 
+e.g 100 = Continue
+
+2xx - Successful
+e.g 200 = OK
+
+3xx - Redirection
+e.g 301 = Moved Permanently
+
+4xx - Client error
+e.g 404 = Not Found
+
+5xx - Server error
+e.g 500 = Internal Server Error

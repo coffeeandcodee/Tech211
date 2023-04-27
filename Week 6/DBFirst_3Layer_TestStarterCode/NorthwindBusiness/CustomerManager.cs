@@ -1,106 +1,92 @@
-﻿using System;
+﻿using NorthwindData;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Diagnostics;
-using NorthwindData;
+using System.Linq;
 
-namespace NorthwindBusiness
+// CustomerManager Executes CRUD operations.
+// Interacts with an ICustomerService object (should be renamed to just IService)
+namespace NorthwindBusiness;
+
+public class CustomerManager
 {
-    public class CustomerManager
+    public Customer SelectedCustomer { get; set; }
+
+    private ICustomerService _service;
+
+    public CustomerManager()
     {
-        public Customer SelectedCustomer { get; set; }
+        _service = new CustomerService();
+    }
 
-        private ICustomerService _service;
+    public CustomerManager(ICustomerService service)
+    {
 
-        public CustomerManager()
+        _service = service;
+    }
+
+    public void SetSelectedCustomer(object selectedItem)
+    {
+
+        SelectedCustomer = (Customer)selectedItem;
+    }
+
+    public List<Customer> RetrieveAll()
+    {
+        using (var db = new NorthwindContext())
         {
-            _service = new CustomerService();
+            return db.Customers.ToList();
         }
+    }
 
-        public CustomerManager(ICustomerService service)
+    public void Create(string customerId, string contactName, string companyName, string city = null)
+    {
+
+        var newCust = new Customer() { CustomerId = customerId, ContactName = contactName, CompanyName = companyName, City = city };
+        _service.Create(newCust);
+    }
+
+    public bool Update(string customerId, string contactName = null, string city = null, string postcode = null, string country = null)
+    {
+        var customer = new Customer()
         {
+            CustomerId = customerId,
+            ContactName = contactName,
+            Country = country,
+            PostalCode = postcode
+        };
 
-            _service = service;
-        }
+        SelectedCustomer = customer;
+        return _service.Update(customer);
+    }
 
-        public void SetSelectedCustomer(object selectedItem)
+
+
+
+
+
+    public bool Delete(string customerId)
+
+    {
+        try
+
         {
-
-            SelectedCustomer = (Customer)selectedItem;
-        }
-
-        public List<Customer> RetrieveAll()
-        {
-            using (var db = new NorthwindContext())
-            {
-                return db.Customers.ToList();
-            }
-        }
-
-        public void Create(string customerId, string contactName, string companyName, string city = null)
-        {
-
-            var newCust = new Customer() { CustomerId = customerId, ContactName = contactName, CompanyName = companyName, City = city };
-            _service.Create(newCust);
-        }
-
-        public bool Update(string customerId, string contactName, string city, string postcode, string country)
-        {
-            SelectedCustomer = _service.Read(customerId);
-
-
-            return false;
-           
-        
-            /*
-
-            using (var db = new NorthwindContext())
-            {
-                var customer = db.Customers.Where(c => c.CustomerId == customerId).FirstOrDefault();
-                if (customer == null)
-                {
-                    Debug.WriteLine($"Customer {customerId} not found");
-                    return false;
-                }
-                customer.ContactName = contactName;
-                customer.City = city;
-                customer.PostalCode = postcode;
-                customer.Country = country;
-                // write changes to database
-                try
-                {
-                    db.SaveChanges();
-                    SelectedCustomer = customer;
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    Debug.WriteLine($"Error updating {customerId}");
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        public bool Delete(string customerId)
-        {
-
             var customer = _service.Read(customerId);
-            if (customer == null)
-            {
-                Debug.WriteLine($"Customer {customerId} not found");
-                return false;
-            }
             _service.Remove(customer);
             SelectedCustomer = null;
 
-            return true;
-            */
         }
 
-        public void Delete(Customer c)
+        catch (ArgumentException e)
+
         {
-            _service.Remove(c);
+            Debug.WriteLine($"Customer {customerId} not found");
+            return false;
         }
+        return true;
+
     }
+
+
+
 }

@@ -1,7 +1,6 @@
-﻿using System;
-using System.Windows;
-using NorthwindBusiness;
+﻿using NorthwindBusiness;
 using System.Diagnostics;
+using System.Windows;
 
 namespace NorthwindWPF
 {
@@ -46,7 +45,7 @@ namespace NorthwindWPF
 
         private void ButtonUpdate_Click(object sender, RoutedEventArgs e)
         {
-            _customerManager.Update(customerId: TextId.Text, contactName: TextName.Text, city: TextCity.Text, postcode: TextPostalCode.Text, country:TextCountry.Text); ;
+            _customerManager.Update(customerId: TextId.Text, contactName: TextName.Text, city: TextCity.Text, postcode: TextPostalCode.Text, country: TextCountry.Text); ;
             ListBoxCustomer.ItemsSource = null;
             // put back the screen data
             PopulateListBox();

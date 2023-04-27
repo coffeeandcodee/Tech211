@@ -1,0 +1,28 @@
+An API is (generally) a mechanism which allows the communication between two computer programs. 
+
+REST is an acronym for Representational State Transfer. REST is an architectural style.
+It isn't a standard nor an implementation technology. It is an approach for developing an API.
+RESTFUL services comply with this architectural style.
+
+It is very easy to call REST APIs from within webpages, specifically from JavaScript code
+running within webpages. JavaScript code can very easily call a REST API.
+
+Constraints of REST:
+- We expect service to have a client-service structure
+
+- A REST API needs to be stateless. No client specific state information stored on service side. HTTP is 
+inherently stateless anyway.In a REST API, all the information needed for the request is needed for the request itself. Statelessness is a
+crucial feature of REST and it means that cookies are not a factor in REST.
+
+- Cacheability. In many cases it is appropriate to cache data from a REST API.
+
+- Layered system. There should be a clear seperation between the different elements in the REST API system. The client shouldn't be aware of how details are stored
+
+-There should be a UNIFORM INTERFACE.
+ Data format transferred back to the client does not need to be the way in which the data is stored. 
+There should be the option of manipulating sources through representations (data retrieved from service previously). 
+There should be self-descriptive messages. Structure of data received should be comprehensible. Usually done through JSON keys. Lastly, "hypermedia as the engine of application state". Content returned from REST API should provide info on how to navigate to other bits of information.
+
+
+
+ 

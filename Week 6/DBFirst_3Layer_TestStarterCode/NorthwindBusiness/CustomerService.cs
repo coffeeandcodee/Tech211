@@ -1,76 +1,89 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NorthwindData;
+﻿using NorthwindData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NorthwindBusiness
+//CustomerService interacts with databas
+
+namespace NorthwindBusiness;
+
+public class CustomerService : ICustomerService, IDisposable
 {
-    public class CustomerService : ICustomerService, IDisposable
+    private NorthwindContext _db;
+
+    public CustomerService(NorthwindContext context)
     {
-        private NorthwindContext _db;
+        _db = context;
+    }
 
-        public CustomerService(NorthwindContext context)
+    public CustomerService()
+    {
+        _db = new NorthwindContext();
+    }
+
+    public void Create(Customer c)
+    {
+        _db.Customers.Add(c);
+        _db.SaveChanges();
+
+    }
+
+    public Customer? Read(string customerId)
+    {
+        return _db.Customers.Find(customerId);
+
+
+    }
+    #region Update (redundant? )
+    public bool Update(Customer c)
+    {
+        var customerToUpdate = Read(c.CustomerId);
+        if (customerToUpdate == null)
         {
-            _db = context;
-        }
-
-        public CustomerService()
-        {
-            _db = new NorthwindContext();
-        }
-
-        public void Create(Customer c)
-        {
-            _db.Customers.Add(c);
-            _db.SaveChanges();
-
-        }
-
-        public Customer Read(string customerId)
-        {
-            var c = _db.Customers.Find(customerId);
-            if (c is null) throw new ArgumentException($"{customerId} is not a valid CustomerID");
-            else return c;
-        }
-
-        public bool Update(Customer c)
-        {   
-            bool exists = _db.Customers.Any(customer => customer.CustomerId == c.CustomerId);
-            var selectedCustomer = _db.Customers.Find(c.CustomerId);
-
-            if (exists)
-            {
-                selectedCustomer.ContactName = c.ContactName;
-                selectedCustomer.CompanyName = c.CompanyName;
-                selectedCustomer.City = c.City;
-                _db.SaveChanges();
-            }
             return false;
-           
         }
+        customerToUpdate.CustomerId = c.CustomerId;
+        customerToUpdate.ContactName = c.ContactName;
+        customerToUpdate.Country = c.Country;
 
+        return true;
 
-        public List<Customer> ReadAll()
+        #region Earlier method
+        /* My earlier method
+        bool exists = _db.Customers.Any(customer => customer.CustomerId == c.CustomerId);
+        var selectedCustomer = _db.Customers.Find(c.CustomerId);
+
+        if (exists)
         {
-            return _db.Customers.ToList();
-        }
-
-        public void Remove(Customer c)
-        {
-            _db.Customers.Remove(c);
-        }
-
-        public void SaveChanges()
-        {
+            selectedCustomer.ContactName = c.ContactName;
+            selectedCustomer.CompanyName = c.CompanyName;
+            selectedCustomer.City = c.City;
             _db.SaveChanges();
         }
+        return false;
+        */
+        #endregion 
+    }
+    #endregion
 
-        public void Dispose()
-        {
-            _db.Dispose();
-        }
+
+    public List<Customer> ReadAll()
+    {
+        return _db.Customers.ToList();
+    }
+
+    public void Remove(Customer c)
+    {
+        _db.Customers.Remove(c);
+    }
+
+    public void SaveChanges()
+    {
+        _db.SaveChanges();
+    }
+
+    public void Dispose()
+    {
+        _db.Dispose();
     }
 }
