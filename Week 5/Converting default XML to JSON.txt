@@ -1,0 +1,15 @@
+Converting default (?) XML to JSON
+Use of attributes in XML can be seen to be arbitrary. Info in attributes can be used as values in 
+JSON
+
+{
+	"Project" : {
+		"Sdk" : "Microsoft.NET.Sdk"
+		"bestBrowser" : "firefox"
+		"PropertyGroup" : {
+			"OutputType" : "Exe"
+			"TargetFramework" : "net6.0",
+			"ImplicitUsings" : true
+		}
+	}
+}

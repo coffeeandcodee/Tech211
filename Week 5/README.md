@@ -2,7 +2,11 @@
 ## Wednesday 19/04 
 
 Lesson on Continuation Integration and continued deployment (optional Week 4 Content) and then moved on to using SQL via C#, and CRUD(Create, Read, Update, Delete)
+Databases can be queried and worked with via SQLClient or Entity Framework. SQLClient uses raw strings, and is far more error prone and inconvenient to work with.
+The below is a snippet of querying data via SQL Client.
+The above code snippet makes a connection to the Northwind database and reads an entry, displaying it on the console.
 ```c#
+//connection is the connection string. Found in the properties of the database (rightclick on database ----> properties).
 using (var connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;
         TrustServerCertificate=False;ApplicationIntent=ReadWrite;
         MultiSubnetFailover=False"))
@@ -25,7 +29,7 @@ using (var connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;I
 
 
         }
-The above code snippet makes a connection to the Northwind database and reads an entry, displaying it on the console.
+
 
 ```
 
@@ -101,4 +105,18 @@ Add-Migration InitialMigration
 For updating
 ```
 Update-Database
+```
+A synchronous program executes line by line. Aynchronous programming is where this isn't the case. You can call a method and have its return value used later, and in the meantime have other processes executed
+
+Asynchronous programming is where a program can start a process then start other processe before the earlier proccesses finish.
+Asynchronous methods use "async" in the signature. Asynchronous methods should include "await" keyword.
+
+XML: (To DO)
+
+JSON Object example
+
+```JSON
+    "employeeId": 2983,
+    
+
 ```

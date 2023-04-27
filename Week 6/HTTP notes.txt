@@ -1,0 +1,3 @@
+Imagine user types in url and presses enter. The web browser creates an HTTP request. The browser then uses network to send it to the server. The server to be contacted is specified in the URL. The server creates a HTTP reponse and uses network to send it back to the browser. The browser receives this http response and interprets the content within HTTP response as a graphical page to be displayed to user (rendering).
+
+In a http request, we have the http method (e.g GET), then the version number of http (typicallt 1.1), then headers, then a blank line. The server returns a http response 

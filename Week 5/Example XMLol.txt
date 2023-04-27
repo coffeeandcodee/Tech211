@@ -1,0 +1,9 @@
+<Projekttt sdk = "PeanutButterKit">
+	<practice>
+		<greeting> Hello World! </greeting>
+		<grandgreeting> Greetings Universe!!! </grandgreeting>
+	</practice>
+	<practice>
+		<departure> Byeeeeeee </departure>
+	</practice>
+</Projekttt>

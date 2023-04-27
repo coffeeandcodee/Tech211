@@ -1,0 +1,21 @@
+{
+	"Projekt" :
+	 {
+		"Sdk" : "AnArbitraryDeveloperKit"
+		"SpacesAllowed?" : "Can values have spaces? Or Question marks?"
+		"MoreDetails"{
+			"PointlessNesting"{
+
+				"PointlessArray": [
+				{"bestFruit" : "Mangoes"},
+				{"bestMilk" : "CoconutMilk"},
+				{"bestNumber" : 9}
+			]
+			}
+
+		}
+		
+
+	}
+
+}

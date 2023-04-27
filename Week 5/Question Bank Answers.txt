@@ -1,9 +1,61 @@
-1. EF is much easier to use than SQL client. SQL is very error prone due to use of raw strings.
 
+1. EF is much easier to use than SQL client. SQL is very error prone due to use of raw strings. EF provides high-level abstraction over underlying database, and is easier to write and maintain than SQL. Easier to map business objects.
 
 2. The connection string is a string that can be found in the properties of a databse used to connect to the 
-database. The connection string is used in code to make queries
+database. The connection string is used in code to make queries. It contains server instance, database name and authentication details.
 
-3. Scaffolding is the conversion of data base entities into classes
+3. Scaffolding is the conversion of data base entities into classes. It produces an EF model from existing database.
 
-EF is eager loadedeager loading is loading data prior use. Lazy loading 
+4. Classes are generated from a database during scaffolding. A class is generated per table, with the classes containing a property that represents each column.
+
+5. The Db Context instance represents a session with the database. It used used to query and save changes to 
+database.
+
+6. One to many relationshis are represented with COLLECTION NAVIGATION properties in the principle entity and a
+reference navigation within the dependent entity, e.g:
+
+public virtual ICollection<Order> Orders {get; set;}	//In Customers class
+public virtual DbSet<Customer> Customers { get; set; }	//In Orders class
+
+7. A using statement defines a scope for the use of an object. At the end of the scope the object is disposed.
+
+8. Partial class is 
+
+9. Model first approach is 
+
+EF is eager loaded. Eager loading is loading data prior use. Lazy loading is loading data upon request
+
+OO and relational approach
+In the relational approach, data is structured in tables of rows and columns
+
+LINQ AND LAMBDA
+1. Method and query syntax. Query syntax looks similar to SQL queries. Method syntax typically involves 
+method chaining and lambda expressions to produce queries.
+
+2.LINQ queries are executed once they are enumerated over.
+
+3.lambda expressions are used to create anonymous functions in place.
+
+YAML is a human-readable data serialization language that is often used for writing configuration files.
+XML is a markup language and file format for storing, transmitting, and reconstructing arbitrary data.
+JSON isa text based way of representin JS object literals, arrays and scalar data.
+JSJON 
+
+Asynchronous methods keywords:
+async in method signature
+Task or Tast<T> return type.
+The await keyword.
+
+YAML files must start with --- to indicate the start of a new document. YAML uses key-value pairs and 
+can represent arrays. YAML uses whitespace to infer
+
+yaml: "this aint markup language". 
+JSON: JavaScript Object Notation. Quotes are redundant
+number: 9
+bool: true
+fruit:
+- Mangoes
+- PIneapples
+- Apples
+
+Serialisation is when you serialise a form of data. They are streamed in bit by bit
