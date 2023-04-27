@@ -36,6 +36,21 @@ namespace NorthwindBusiness
             else return c;
         }
 
+        public bool Update(Customer c)
+        {   
+            bool exists = _db.Customers.Any(customer => customer.CustomerId == c.CustomerId);
+            var selectedCustomer = _db.Customers.Find(c.CustomerId);
+
+            if (exists)
+            {
+                selectedCustomer.ContactName = c.ContactName;
+                selectedCustomer.CompanyName = c.CompanyName;
+                selectedCustomer.City = c.City;
+                _db.SaveChanges();
+            }
+            return false;
+           
+        }
 
 
         public List<Customer> ReadAll()

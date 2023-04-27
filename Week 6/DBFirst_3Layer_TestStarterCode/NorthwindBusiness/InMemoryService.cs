@@ -30,6 +30,25 @@ public class InMemoryService : ICustomerService
         db.Remove(c);
     }
 
+    public bool Update(Customer c)
+    {
+        bool exists = db.Any(customer => customer.CustomerId == c.CustomerId);
+        var selectedCustomer = db.Find(customer => c.CustomerId == c.CustomerId);
+
+        if (exists)
+        {
+            selectedCustomer.ContactName = c.ContactName;
+            selectedCustomer.CompanyName = c.CompanyName;
+            selectedCustomer.City = c.City;
+            return true;
+        }
+        else
+        {
+            return false;
+        }    
+
+    }
+
     public void SaveChanges()
     {
 

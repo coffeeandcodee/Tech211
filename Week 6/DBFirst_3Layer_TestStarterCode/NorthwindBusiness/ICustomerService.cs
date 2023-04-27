@@ -11,6 +11,8 @@ public interface ICustomerService
 
     public void Create(Customer c);
 
+    public bool Update(Customer C);
+
     //We don't need update nor delete
     public void Remove(Customer c);
 

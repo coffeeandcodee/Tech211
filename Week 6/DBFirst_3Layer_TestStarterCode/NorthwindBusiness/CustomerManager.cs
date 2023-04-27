@@ -44,10 +44,15 @@ namespace NorthwindBusiness
             _service.Create(newCust);
         }
 
-        public bool Update(string customerId, string contactName, string country, string city, string postcode)
+        public bool Update(string customerId, string contactName, string city, string postcode, string country)
         {
+            SelectedCustomer = _service.Read(customerId);
+
+
+            return false;
            
-         
+        
+            /*
 
             using (var db = new NorthwindContext())
             {
@@ -90,6 +95,12 @@ namespace NorthwindBusiness
             SelectedCustomer = null;
 
             return true;
+            */
+        }
+
+        public void Delete(Customer c)
+        {
+            _service.Remove(c);
         }
     }
 }
