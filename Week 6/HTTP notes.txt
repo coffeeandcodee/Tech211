@@ -1,5 +1,9 @@
 Imagine user types in url and presses enter. The web browser creates an HTTP request. The browser then uses network to send it to the server. The server to be contacted is specified in the URL. The server creates a HTTP reponse and uses network to send it back to the browser. The browser receives this http response and interprets the content within HTTP response as a graphical page to be displayed to user (rendering).
 
+http is a STATELESS application-level protocol. There is no ongoing memory 
+within system regarding who is communicating with who. Recall the letter analogy. Letters
+in posts need to be given details each time
+
 A curl is a command-line http client
 
 Cookies are used for storing information on the browser then sending to server
@@ -13,7 +17,7 @@ IMPORTANT HTTP METHODS
 -POST
 -PUT
 -DELETE
--PATCH
+-PATCH 
 
 STATUS CODES:
 
@@ -31,3 +35,25 @@ e.g 404 = Not Found
 
 5xx - Server error
 e.g 500 = Internal Server Error
+
+HTTP Requests:
+
+Made up of a Request Line, HEADERS, and a BODY.
+e.g
+
+POST /api/recipes HTTP/1.1  <------ Request Line
+
+
+Host: recipes.contoso.com	---- HEADERS ----		
+User-Agent: demo/client
+Accept: application/json
+Content-Type: application/json 
+
+{
+	"title": "Lentil scramble",			---- BODY (JSON) ----
+	"Description: "Favourite breakfast"
+	"Ingredients"				
+
+}
+
+

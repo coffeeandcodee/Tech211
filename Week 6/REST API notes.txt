@@ -1,6 +1,6 @@
 An API is (generally) a mechanism which allows the communication between two computer programs. 
 
-REST is an acronym for Representational State Transfer. REST is an architectural style.
+REST is a shorthand m for Representational State Transfer. REST is an architectural style.
 It isn't a standard nor an implementation technology. It is an approach for developing an API.
 RESTFUL services comply with this architectural style.
 
@@ -23,6 +23,18 @@ crucial feature of REST and it means that cookies are not a factor in REST.
 There should be the option of manipulating sources through representations (data retrieved from service previously). 
 There should be self-descriptive messages. Structure of data received should be comprehensible. Usually done through JSON keys. Lastly, "hypermedia as the engine of application state". Content returned from REST API should provide info on how to navigate to other bits of information.
 
+REST API is often just CRUD using http/JSON
 
-
+CREATE: 
+We use POST or PUT. When using POST, the entity can't already exist.
+When using PUT, if the entity doesn't exist it gets created. If it 
+does, the entity is updated instead.
  
+READ: 
+Using GET. Already the default in curl. Error if nonexistent entity.
+
+UDPATE: 
+Using PATCH or PUT. If attempting to update nonexistent entity, then PATCH returns error.
+
+DELETE: 
+Done using delete. Error if nonexistent.

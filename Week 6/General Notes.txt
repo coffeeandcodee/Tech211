@@ -1,0 +1,24 @@
+Dependency Inversion is ensuring entities are independent. Recall new is glue. Camera object within hunter object,
+where camera can't be independently accessed. 
+
+
+FROM https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-7.0&tabs=visual-studio
+Starting from "Scaffold a controller"
+
+The generated code marks the controller class with the [ApiController] attribute. This attribute indicates that
+the controller responds to web API requests.
+Dependency injection is used to inject the database context (TodoContext) into the controller.
+The database context is used in each of the CRUD methods in the controller.
+
+Controllers with views include [action] in the route template.
+API controllers don't include [action] in the route template.
+
+When the [action] token isn't in the route template, the action name (method name) isn't included in the endpoint. The action's associated method name isn't used in the matching route.
+
+The CreatedAtAction method:
+- Returns an HTTP 201 status code. HTTP 201 is the standard response for an HTTP POST
+method that creates a new resource on the server.
+- Adds a location header to the response. This location header specifies the URI of the newly 
+created to-do item.
+- References the GetTodoItem action to create the Location header's URI. The C# nameof keyword is 
+is used to avoid hard-coding the action name in the CreatedAtAction call.

@@ -1,0 +1,10 @@
+When stressed, pituitary gland secretes adrenocorticotropic hormone.
+
+Imagine original ancestral stress situation. You're encountered by a lion, 
+or a bear. Fight or flight switches on, pituitary gland secretes 
+adrenocorticotropic hormone. Cortisol (and adrenaline?) is then released.
+
+Example of the body's if then sequencing. If in danger, ramp up cortisol.
+The following sequence is if exerted sufficient effort, then lower cortisol.
+
+The first if else is activated a lot in modern day. The second part, not so much.

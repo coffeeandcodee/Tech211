@@ -15,3 +15,19 @@ Spy – records information such as the number of times a specified method is ca
 Mock – is set up to expect certain method calls with defined parameters. Fails if it receive unexpected method calls or parameters.
 
 Moq allows white box testing 
+
+
+### Friday 28/04
+
+ASP :
+Active Server Pages. Unlike static HTML, web pages are actively created using data held by server. 
+ASP.NET Core is what is in use now, v6.0 or v7.0.
+
+Alternatives to ASP.NET include Node.js (JS), Java EE, and Django (python). 
+
+Model independent of view and controller. View and controller can be replaced and model can stay the same.
+
+Dependency Injection: The object depended on is injected into constructor as a paramter, rather than constructed.
+
+### Tuesday 02/05
+
