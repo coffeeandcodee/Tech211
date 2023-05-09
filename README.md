@@ -25,3 +25,10 @@ Algorithmic Complexity & Big O, Recursion, Design Patterns, SQL
 #### :file_folder: [Week 5](/Week%205/)
 
 Database querying through C# code via SQLClient and Entity framework. LINQ Query syntax and method syntax.
+
+### WEEK 6: APIs ::
+### :file_folder: [Week 6](Week%206/)
+HTTP and REST API architecture
+
+### WEEK 7: Web dev :email:
+### :file_folder: [Week 7](Week%207/)

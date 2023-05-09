@@ -53,7 +53,8 @@ Content-Type: application/json
 	"title": "Lentil scramble",			---- BODY (JSON) ----
 	"Description: "Favourite breakfast"
 	"Ingredients"				
-
 }
+
+HTTP response has a STATUS CODE. Status codes highlighted previously.
 
 

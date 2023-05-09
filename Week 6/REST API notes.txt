@@ -1,6 +1,6 @@
 An API is (generally) a mechanism which allows the communication between two computer programs. 
 
-REST is a shorthand m for Representational State Transfer. REST is an architectural style.
+REST is a shorthand for Representational State Transfer. REST is an architectural style.
 It isn't a standard nor an implementation technology. It is an approach for developing an API.
 RESTFUL services comply with this architectural style.
 
@@ -12,6 +12,7 @@ Constraints of REST:
 
 - A REST API needs to be stateless. No client specific state information stored on service side. HTTP is 
 inherently stateless anyway.In a REST API, all the information needed for the request is needed for the request itself. Statelessness is a
+
 crucial feature of REST and it means that cookies are not a factor in REST.
 
 - Cacheability. In many cases it is appropriate to cache data from a REST API.

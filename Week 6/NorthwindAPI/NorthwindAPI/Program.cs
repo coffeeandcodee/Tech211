@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using NorthwindAPI.Data.Repositories;
 using NorthwindAPI.Models;
+using NorthwindAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Services.AddControllers()
 
 builder.Services.AddDbContext<NorthwindContext>(opt => opt.UseSqlServer(dbConnection));
 builder.Services.AddScoped(typeof(INorthwindRepository<>), typeof(NorthwindRepository<>));
+builder.Services.AddScoped(typeof(INorthwindService<>), typeof(NorthwindService<>));
 builder.Services.AddScoped<INorthwindRepository<Supplier>, SuppliersRepository>();
 
 var app = builder.Build();

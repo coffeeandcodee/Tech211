@@ -1,0 +1,58 @@
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(45deg, #6666AA, #AA6666);
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+
+.box1 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.box2 {
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+/*
+
+li{
+    color: aqua;
+    font-size: 0.60rem;
+}
+
+p, h3 {
+    font-size: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+HASHTAG # lookds at ID!!!
+  # is an id selector
+  ids are selected by #
+#search{
+    background-color: beige;
+    width: 10vw;
+}
+
+.btn{
+
+}
+
+
+
+*{
+    text-align: center;
+}
+*/
+
+
+
+
+
+
+
+

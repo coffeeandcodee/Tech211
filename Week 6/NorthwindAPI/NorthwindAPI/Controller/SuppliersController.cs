@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NorthwindAPI.Data.Repositories;
 using NorthwindAPI.Models;
 using NorthwindAPI.Models.DTO;
-
+using NorthwindAPI.Services;
 
 namespace NorthwindAPI.Controller;
 
@@ -15,50 +15,37 @@ public class SuppliersController : ControllerBase
 
     private readonly ILogger _logger;
     private readonly INorthwindRepository<Supplier> _supplierRepository;
+    private readonly INorthwindService<Supplier> _supplierService;
 
-
-    public SuppliersController(NorthwindContext context, ILogger<SuppliersController> logger, INorthwindRepository<Supplier> supplierRepository)
+    public SuppliersController(INorthwindService<Supplier> supplierService)
     {
-        _context = context;
-        _logger = logger;
-        _supplierRepository = supplierRepository;
+        _supplierService = supplierService;
     }
 
     // GET: api/Suppliers
     [HttpGet]
+
     public async Task<ActionResult<IEnumerable<SupplierDTO>>> GetSuppliers()
     {
-        if (_context.Suppliers == null)
+        if (_supplierService is null)
         {
             return NotFound();
         }
-        return (await _supplierRepository.GetAllAsync())
-            .Select(s => Utils.SupplierToDTO(s))
-            .ToList();
+        return (await _supplierService.GetAllAsync())
+        .Select(s => Utils.SupplierToDTO(s)).ToList();
     }
+
 
     // GET: api/Suppliers/5
     [HttpGet("{id}")]
     public async Task<ActionResult<SupplierDTO>> GetSupplier(int id)
     {
-        if (_context.Suppliers == null)
-        {
-            return NotFound();
-        }
-        var supplier = await _context.Suppliers
-            .Where(s => s.SupplierId == id)
-            .Include(s => s.Products)
-            .FirstOrDefaultAsync();
-
-
+        var supplier = await _supplierService.GetAsync(id);
         if (supplier == null)
         {
-            _logger.LogWarning($"Supplier with id: {id} was not found");
             return NotFound();
         }
-
-        _logger.LogInformation($"Supplier with id:{id} was found");
-
+        
         return Utils.SupplierToDTO(supplier);
 
     }
@@ -72,10 +59,13 @@ public class SuppliersController : ControllerBase
             return NotFound();
         }
 
-        var supplier = await _context.Suppliers
-            .Where(s => s.SupplierId == id)
-            .Include(s => s.Products)
-            .FirstOrDefaultAsync();
+        var supplier = await _supplierRepository.FindAsync(id);
+
+        //BEfore supplierRepository
+        /*await _context.Suppliers
+        .Where(s => s.SupplierId == id)
+        .Include(s => s.Products)
+        .FirstOrDefaultAsync();*/
 
 
         if (supplier == null)
@@ -99,42 +89,14 @@ public class SuppliersController : ControllerBase
             return BadRequest();
         }
 
-        _context.Entry(supplier).State = EntityState.Modified;
-
-        try
+        if(await _supplierService.UpdateAsync(id, supplier))
         {
-            await _context.SaveChangesAsync();
-        }
-        catch (DbUpdateConcurrencyException)
-        {
-            if (!SupplierExists(id))
-            {
-                return NotFound();
-            }
-            else
-            {
-                throw;
-            }
+            return NoContent();
         }
 
-        return NoContent();
-    }
+        return NotFound();
 
-    // POST: api/Suppliers
-    // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-    [HttpPost]
-    public async Task<ActionResult<SupplierDTO>> PostSupplier([Bind("CompanyName, ContactName, ContactTitle, Country, Products")] Supplier supplier)
-    {
-        if (_context.Suppliers == null)
-        {
-            return Problem("Entity set 'NorthwindContext.Suppliers'  is null.");
-        }
-        _context.Suppliers.Add(supplier);
-        await _context.SaveChangesAsync();
-
-        return CreatedAtAction("GetSupplier",
-            new { id = supplier.SupplierId },
-            Utils.SupplierToDTO(supplier));
+       
     }
 
 
@@ -142,23 +104,27 @@ public class SuppliersController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteSupplier(int id)
     {
-        if (_context.Suppliers == null)
+        if (_supplierRepository.IsNull)
         {
             return NotFound();
         }
-        var supplier = await _context.Suppliers
-            .Where(s => s.SupplierId == id)
-            .Include(s => s.Products)
-            .FirstOrDefaultAsync();
+        var supplier = await _supplierRepository.FindAsync(id);
+        /*
+        .Where(s => s.SupplierId == id)
+        .Include(s => s.Products)
+        .FirstOrDefaultAsync();
+        */
 
         if (supplier == null)
         {
             return NotFound();
         }
 
+        foreach (var item in _context.Products.Where(p => p.SupplierId == id)) item.SupplierId = null;
+
         supplier.Products.Select(p => p.SupplierId = null);
 
-        _context.Suppliers.Remove(supplier);
+        _supplierRepository.Remove(supplier);
         await _context.SaveChangesAsync();
 
         return NoContent();

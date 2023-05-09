@@ -16,8 +16,6 @@ public class NorthwindRepository<T> : INorthwindRepository<T> where T : class
         _dbSet = context.Set<T>();
     }
 
-
-
     public bool IsNull => _dbSet == null;
 
 
