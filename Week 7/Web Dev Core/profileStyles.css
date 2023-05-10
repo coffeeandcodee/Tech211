@@ -4,19 +4,81 @@ body{
     background: linear-gradient(45deg, #6666AA, #AA6666);
     color: white;
     text-align: center;
-    margin: 0;
+    text-shadow: 2px 2px 5px black;
 }
 
+/* The service layer in APIs is responsible 
+communication between the Controller and Respository */
 
 .box1 {
     background-color: rgba(0, 0, 0, 0.5);
+
 }
 
+img{
+    box-shadow: 10px 10px 15px black;
+    margin-bottom: 10px;
+}
 
 .box2 {
     background-color: rgba(255, 255, 255, 0.5);
+    
 
 }
+
+.game-box{
+    background-color: linear-gradient(45deg, #6666AA, #AA6666);
+}
+
+
+*{
+    margin-bottom: 1px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* this specifies h4s in footer elements
+the , would mean "ir" */
+footer h4{
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+
+}
+
+label[for = "search"]{
+    text-transform: uppercase;
+}
+
+#search:focus{
+    outline: #AA6666 4px solid;
+}
+a:visited{
+    color: initial;
+}
+
+a:hover{
+    cursor: crosshair;
+}
+
+
+.flex-container{
+    /* for navbar */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15vw;
+}
+
+.flex-container li {
+    list-style: none;
+    padding: 2px;
+}
+
+
+
+
 
 /*
 
@@ -44,10 +106,8 @@ HASHTAG # lookds at ID!!!
 
 
 
-*{
-    text-align: center;
-}
-*/
+
+
 
 
 
