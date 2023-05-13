@@ -1,0 +1,16 @@
+Scaffolding automatically creates CRUD.cshtml files for the model selected.  
+These can be seen in view/model. Scaffolding in an ASP.NET web app project also adds a database context 
+class: Data/MvcMovieContext.cs
+
+Worth noting scaffolding automatically adds the following packages:
+
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+Scaffolding also updates by:
+Inserting required package references in the MvcMovie.csproj project file.
+Registering the database context in the Program.cs file.
+Adding the database connection string to the appsettings.json file.
+
+

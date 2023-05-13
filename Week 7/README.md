@@ -13,3 +13,6 @@ Both C# have the same data types.
 
 Error checking and debugging is more difficult in JS as there are not compile time errrors.
 
+
+## 11/05
+

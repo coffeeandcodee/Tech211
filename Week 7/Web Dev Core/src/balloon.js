@@ -63,17 +63,7 @@ class Balloon {
 
             this.col = color(156)
 
-        }
-
-
-
-
-
-
-        
-            
-            
-            
+        }   
             
             }
    

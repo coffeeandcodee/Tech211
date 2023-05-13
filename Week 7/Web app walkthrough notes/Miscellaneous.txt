@@ -1,0 +1,6 @@
+(Part 6)
+The ValidateAntiForgeryToken attribute is used to prevent forgery of a request.
+It is paired up with an anti-forgery token generated in the edit view file.
+
+The Form Tag Helper generates a hidden anti-forgery token. The token must match the
+[ValidateAntiForgeryToken] generated anti-forgery token in the Edit method of the Movies controller

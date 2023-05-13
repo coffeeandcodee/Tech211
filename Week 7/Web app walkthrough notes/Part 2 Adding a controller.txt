@@ -1,0 +1,57 @@
+PART 2:
+MVC apps:
+
+Models: 
+Classes that represent the DATA of the app. Model classes use validation logic
+to enforce business rules for that data. 
+Models typically retrieve and store model state in a database.
+
+Views: 
+Views are components that display the app's UI. This UI generally displays the model
+data. 
+
+Controllers:
+These are classes that handle browser requests, retrieve model data, and call view
+templates that return a response. 
+
+Seperation of concerns: 
+Input logic belongs in the controller.
+Business logic belongs in the model.
+
+HTTP endpoints: 
+
+Every public method in a controller is callable as an HTTP endpoint. 
+
+An HHTP  is a targetable URL in the web application, e.g 
+https://localhost:5001/HelloWorld
+
+A HTTP endpoint combines the protocol used (HTTPS), the network location of the web server, including the TCP port (localhost:5001), and the target URI (HelloWorld).
+
+In the above URL segment:
+- localhost:5001/HelloWorld maps to the HelloWorld Controller class.
+- The second part determines action method. e.g, localhost:5001/HelloWorld/Index causes
+  the Index method of the controller class to run. Notice that this is the default initially.
+- The third part is for route data. 
+
+We can modify the code to pass in URL information to the controller, e.g /HelloWorld/Welcome?name=Rick&numtimes=4
+We add parameters to the Welcome method and use HtmlEncoder
+URL follows sytanx of 
+/[Controller]/[ActionName]/[Parameters]
+
+public string Welcome(string name, int numTimes = 1)
+{
+    return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
+}
+
+This code uses the C# optional parameter feature to indicate that the numTimes parameter
+defaults to 1.
+HtmlEncoder.Default.Encode is used to protect the app from the malicious input, such as through
+JavaScript.
+
+Notice  the code
+app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+on Line 29 of Program.cs. id is default expectation of the parameteres part of URL. The trailing ? in id? indicates parameter is optional 
+
+
